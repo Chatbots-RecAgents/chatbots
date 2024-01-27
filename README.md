@@ -1,4 +1,3 @@
-- [Make friends](#Make friends)
   - [Overview](#Overview)
   - [Dependencies](#Dependencies)
   - [Objectives](#Objectives)
