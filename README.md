@@ -2,16 +2,32 @@
 #Product Vision Statement
 To make meeting people easier 
 
+
+
+- [Make friends](#Make friends)
+  - [Overview](#Overview)
+  - [Dependencies](#Dependencies)
+  - [Objectives](#Objectives)
+  - [Keyresults](#Keyresults)
+  - [Structure](#Structure)
+  - [Setup](#Setup)
+  - [CodeExplanation](#CodeExplanation)
+  - [Tests](#Tests)
+   
+
+# Overview
+Eventually add picture of system architecture
+
+
 # Dependencies
 In this project, we will be using the OpenAi API, a recommendation engine, and a data processing tool
 
-# OKRs
- * Objectives:
- *   Improve customer satisfaction
- * Key results:
- *   Making the webapp easily accessible
- *   Maintaining recommendation speed
- *   Correctly processing data given to the chatbot
+# Objectives
+   Improve customer satisfaction
+# Key results:
+   Making the webapp easily accessible
+   Maintaining recommendation speed
+   Correctly processing data given to the chatbot
 
 
 # Structure
@@ -23,12 +39,12 @@ In this project, we will be using the OpenAi API, a recommendation engine, and a
 # Setup
 * Will revisit when we continue with the project
 
-# Code explanation
-* Chatbot creation
+## Code explanation
+# Chatbot creation
 We will be using the OpenAI API to create a chatbot. The chatbot will ask the user questions, and save their answers into a txt file.
-* Data Processing
+# Data Processing
 The data will be taken from the txt file, and will go through an EDA process. After the EDA process, it will be fed into a recommendation engine
-* Recommendation Engine
+# Recommendation Engine
 Specifics on this model will be written later. After the data is fed into this model, the model will send the output back to the chatbot which will send it to the user.
 
 # Tests
