@@ -12,13 +12,14 @@
 ### Product Vision Statement
   To make meeting people easier 
 
-### Overview
+## Overview
   Eventually add picture of system architecture
 
 
-### Dependencies
+## Dependencies
   In this project, we will be using the OpenAi API, a recommendation engine, and a data processing tool
 
+## Objectives and Key Results
 ### Objectives
    Improve customer satisfaction
 ### KRs:
@@ -27,13 +28,13 @@
    Correctly processing data given to the chatbot
 
 
-### Structure
+## Structure
 * .github: CI/CD with GitHub Actions. It runs the tests every time there is a pull request to the repository, and everytime someone pushes their codes.
 * docs: Documentation of the project
 * tests: Python tests completed using PyTest
 * xxxxxx
 
-### Setup
+## Setup
 * Will revisit when we continue with the project
 
 ## Code
