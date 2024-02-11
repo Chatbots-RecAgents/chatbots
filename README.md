@@ -48,3 +48,11 @@
 
 # Tests
   The tests will be explained as we start the coding foundations
+
+## For the chatbot:
+1. Install llama-cpp-python
+2. Install langchain
+3. Install streamlit
+4. Run streamlit (streamlit run main.py)
+
+Also make sure to work using a venv. 
