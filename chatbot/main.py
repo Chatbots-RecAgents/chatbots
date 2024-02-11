@@ -1,135 +1,58 @@
 import streamlit as st
-from langchain.llms import LlamaCpp
-from langchain.prompts import PromptTemplate
-# from langchain.callbacks.manager import CallbackManager
-from langchain.callbacks.base import BaseCallbackHandler
-from huggingface_hub import hf_hub_download
-
-
-# StreamHandler to intercept streaming output from the LLM.
-# This makes it appear that the Language Model is "typing"
-# in realtime.
-class StreamHandler(BaseCallbackHandler):
-    def __init__(self, container, initial_text=""):
-        self.container = container
-        self.text = initial_text
-
-    def on_llm_new_token(self, token: str, **kwargs) -> None:
-        self.text += token
-        self.container.markdown(self.text)
-
-
-@st.cache_resource
-def create_chain(system_prompt):
-    # A stream handler to direct streaming output on the chat screen.
-    # This will need to be handled somewhat differently.
-    # But it demonstrates what potential it carries.
-    # stream_handler = StreamHandler(st.empty())
-
-    # Callback manager is a way to intercept streaming output from the
-    # LLM and take some action on it. Here we are giving it our custom
-    # stream handler to make it appear that the LLM is typing the
-    # responses in real-time.
-    # callback_manager = CallbackManager([stream_handler])
-
-    (repo_id, model_file_name) = ("TheBloke/Mistral-7B-Instruct-v0.1-GGUF",
-                                  "mistral-7b-instruct-v0.1.Q4_0.gguf")
-
-    model_path = hf_hub_download(repo_id=repo_id,
-                                 filename=model_file_name,
-                                 repo_type="model")
-
-    # initialize LlamaCpp LLM model
-    llm = LlamaCpp(
-            model_path=model_path,
-            temperature=0, #This means that it will not be random and the data will be precise. 
-            max_tokens=512,
-            top_p=1,
-            stop=["[INST]"],
-            verbose=False,
-            streaming=True,
-            )
-
-    # Template you will use to structure your user input before converting
-    # into a prompt. Here, my template first injects the personality I wish to
-    # give to the LLM before in the form of system_prompt pushing the actual
-    # prompt from the user. Note that this chatbot doesn't have any memory of
-    # the conversation. So we will inject the system prompt for each message.
-    template = """
-    <s>[INST]{}[/INST]</s>
-
-    [INST]{}[/INST]
-    """.format(system_prompt, "{question}")
-
-    # We create a prompt from the template so we can use it with Langchain
-    prompt = PromptTemplate(template=template, input_variables=["question"])
-
-    # We create an llm chain with our LLM and prompt
-    # llm_chain = LLMChain(prompt=prompt, llm=llm) # Legacy
-    llm_chain = prompt | llm  # LCEL
-
-    return llm_chain
-
+import pandas as pd
 
 # Set the webpage title
-st.set_page_config(
-    page_title="HingE by IE, for IE!"
-)
+st.set_page_config(page_title="HingE by IE")
 
 # Create a header element
-st.header("HingE by IE, for IE!")
+st.header("HingE by IE")
 
-# This sets the LLM's personality for each prompt.
-system_prompt = st.text_area(
-    label="System Prompt",
-    value="You are a helpful AI assistant who answers questions in short sentences.", 
-    #value="You are a helpful AI assistant who gathers answers from the user and then based on a trained model, gives suggestions", 
-    key="system_prompt")
+# List of questions to ask the user
+questions = ["What's your name?",
+             "What's your gender?",
+             "How old are you?",
+             "In which year are you?",
+             "What's your degree?",
+             "Where are you from?",
+             "What languages can you speak?",
+             "What are your hobbies?"]
 
-# Create LLM chain to use for our chatbot.
-llm_chain = create_chain(system_prompt)
-
-# We store the conversation in the session state.
-# This will be used to render the chat conversation.
-# We initialize it with the first message we want to be greeted with.
+# Store the conversation in the session state
 if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "What is your bachelor?"}
-        #Modify here so that the chatbot asks the questions we want
-    ]
+    st.session_state.messages = []
 
-if "current_response" not in st.session_state:
-    st.session_state.current_response = ""
+# Store the user responses in a dictionary
+user_responses = {question: [] for question in questions}
 
-# We loop through each message in the session state and render it as
-# a chat message.
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+# Store the current question index in the session state
+if "question_index" not in st.session_state:
+    st.session_state.question_index = 0
 
-# We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input"):
+# Display the current question
+current_question = questions[st.session_state.question_index]
+with st.chat_message("assistant"):
+    st.markdown(current_question)
 
-    # Add our input to the session state
-    st.session_state.messages.append(
-        {"role": "user", "content": user_prompt}
-    )
+# Get user input
+if current_question in ["What languages can you speak?", "What are your hobbies?"]:
+    user_response = st.text_input("Your response here (comma-separated)", key=f"{current_question}_response")
+    user_responses[current_question] = [item.strip() for item in user_response.split(',')]
+else:
+    user_response = st.text_input("Your response here", key=f"{current_question}_response")
+    user_responses[current_question].append(user_response)
 
-    # Add our input to the chat window
-    with st.chat_message("user"):
-        st.markdown(user_prompt)
+# Store the user's response in the session state
+st.session_state.messages.append(
+    {"role": "user", "content": user_response}
+)
 
-    # Pass our input to the LLM chain and capture the final responses.
-    # It is worth noting that the Stream Handler is already receiving the
-    # streaming response as the llm is generating. We get our response
-    # here once the LLM has finished generating the complete response.
-    response = llm_chain.invoke({"question": user_prompt})
-
-    # Add the response to the session state
-    st.session_state.messages.append(
-        {"role": "assistant", "content": response}
-    )
-
-    # Add the response to the chat window
-    with st.chat_message("assistant"):
-        st.markdown(response)
+# Move to the next question if not the last one
+if st.session_state.question_index < len(questions) - 1:
+    st.session_state.question_index += 1
+else:
+    # Display the submit button at the last question
+    if st.button("Submit"):
+        # Create a DataFrame with user responses and save it to your dataset
+        df = pd.DataFrame(user_responses.items(), columns=['Questions', 'Answers'])
+        df.to_csv('generatedData.csv', index=False)  # Save DataFrame to CSV
+        st.write("Conversation submitted!")
