@@ -1,373 +1,2196 @@
 [
-    {
-      "Name": "John Smith",
-      "Gender": "Male",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Computer Science and Artificial Intelligence",
-      "Country of Origin": "USA",
-      "Languages Spoken": "English",
-      "Hobbies": "Playing video games - reading - hiking"
-    },
-    {
-      "Name": "Emily Johnson",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Business Administration",
-      "Country of Origin": "Canada",
-      "Languages Spoken": "English, French",
-      "Hobbies": "Painting - playing guitar - photography"
-    },
-    {
-      "Name": "Michael Williams",
-      "Gender": "Male",
-      "Age": 22,
-      "Year of Study": 4,
-      "Major": "Economics",
-      "Country of Origin": "UK",
-      "Languages Spoken": "English",
-      "Hobbies": "Playing football - watching movies - traveling"
-    },
-    {
-      "Name": "Sarah Brown",
-      "Gender": "Female",
-      "Age": 20,
-      "Year of Study": 1,
-      "Major": "Communication and Digital Media",
-      "Country of Origin": "Australia",
-      "Languages Spoken": "English",
-      "Hobbies": "Writing - photography - dancing"
-    },
-    {
-      "Name": "David Jones",
-      "Gender": "Male",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Architecture",
-      "Country of Origin": "Germany",
-      "Languages Spoken": "German, English",
-      "Hobbies": "Drawing - playing piano - cooking"
-    },
-    {
-      "Name": "Jessica Davis",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Design",
-      "Country of Origin": "France",
-      "Languages Spoken": "French, English",
-      "Hobbies": "Sketching - hiking - reading"
-    },
-    {
-      "Name": "Daniel Miller",
-      "Gender": "Male",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Applied Mathematics",
-      "Country of Origin": "Brazil",
-      "Languages Spoken": "Portuguese, English",
-      "Hobbies": "Playing chess - coding - listening to music"
-    },
-    {
-      "Name": "Olivia Wilson",
-      "Gender": "Female",
-      "Age": 22,
-      "Year of Study": 4,
-      "Major": "Environmental Sciences for Sustainability",
-      "Country of Origin": "Sweden",
-      "Languages Spoken": "Swedish, English",
-      "Hobbies": "Gardening - hiking - bird watching"
-    },
-    {
-      "Name": "Ethan Moore",
-      "Gender": "Male",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Business Administration",
-      "Country of Origin": "China",
-      "Languages Spoken": "Mandarin, English",
-      "Hobbies": "Playing basketball - watching movies - photography"
-    },
-    {
-      "Name": "Sophia Taylor",
-      "Gender": "Female",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "International Relations (Philosophy, Politics, Law, and Economics)",
-      "Country of Origin": "India",
-      "Languages Spoken": "Hindi, English",
-      "Hobbies": "Debating - writing - yoga"
-    },
-    {
-      "Name": "Benjamin Anderson",
-      "Gender": "Male",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Urban Studies",
-      "Country of Origin": "Japan",
-      "Languages Spoken": "Japanese, English",
-      "Hobbies": "Exploring cities - photography - cycling"
-    },
-    {
-      "Name": "Ava Thomas",
-      "Gender": "Female",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Fashion Design",
-      "Country of Origin": "Italy",
-      "Languages Spoken": "Italian, English",
-      "Hobbies": "Sewing - fashion illustration - traveling"
-    },
-    {
-      "Name": "Lucas Jackson",
-      "Gender": "Male",
-      "Age": 22,
-      "Year of Study": 4,
-      "Major": "Humanities",
-      "Country of Origin": "Spain",
-      "Languages Spoken": "Spanish, English",
-      "Hobbies": "Playing guitar - reading classic literature - painting"
-    },
-    {
-      "Name": "Mia White",
-      "Gender": "Female",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Laws",
-      "Country of Origin": "Russia",
-      "Languages Spoken": "Russian, English",
-      "Hobbies": "Playing piano - writing poetry - skiing"
-    },
-    {
-      "Name": "Logan Harris",
-      "Gender": "Male",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Data and Business Analytics",
-      "Country of Origin": "South Africa",
-      "Languages Spoken": "English, Afrikaans",
-      "Hobbies": "Playing rugby - coding - hiking"
-    },
-    {
-      "Name": "Chloe Martin",
-      "Gender": "Female",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Behaviour and Social Sciences",
-      "Country of Origin": "Netherlands",
-      "Languages Spoken": "Dutch, English",
-      "Hobbies": "Volunteering - hiking - painting"
-    },
-    {
-      "Name": "Liam Martinez",
-      "Gender": "Male",
-      "Age": 22,
-      "Year of Study": 4,
-      "Major": "Philosophy, Politics, Law and Economics",
-      "Country of Origin": "Mexico",
-      "Languages Spoken": "Spanish, English",
-      "Hobbies": "Political activism - playing guitar - reading philosophy"
-    },
-    {
-      "Name": "Isabella Thompson",
-      "Gender": "Female",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Economics",
-      "Country of Origin": "South Korea",
-      "Languages Spoken": "Korean, English",
-      "Hobbies": "Watching K-dramas - cooking - playing tennis"
-    },
-    {
-      "Name": "Noah Garcia",
-      "Gender": "Male",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Computer Science and Artificial Intelligence",
-      "Country of Origin": "UAE",
-      "Languages Spoken": "Arabic, English",
-      "Hobbies": "Playing video games - coding - photography"
-    },
-    {
-      "Name": "Amelia Hernandez",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Design",
-      "Country of Origin": "Argentina",
-      "Languages Spoken": "Spanish, English",
-      "Hobbies": "Painting - traveling - photography"
-    },
-    {
-      "Name": "Jack Wilson",
-      "Gender": "Male",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Environmental Sciences for Sustainability",
-      "Country of Origin": "Canada",
-      "Languages Spoken": "English",
-      "Hobbies": "Hiking - photography - bird watching"
-    },
-    {
-      "Name": "Sophie Nguyen",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Applied Mathematics",
-      "Country of Origin": "Vietnam",
-      "Languages Spoken": "Vietnamese, English",
-      "Hobbies": "Playing piano - reading - coding"
-    },
-    {
-      "Name": "Ethan Ng",
-      "Gender": "Male",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Business Administration",
-      "Country of Origin": "Singapore",
-      "Languages Spoken": "English, Chinese",
-      "Hobbies": "Playing basketball - watching movies - programming"
-    },
-    {
-      "Name": "Ella Chen",
-      "Gender": "Female",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Communication and Digital Media",
-      "Country of Origin": "Taiwan",
-      "Languages Spoken": "Chinese, English",
-      "Hobbies": "Dancing - painting - photography"
-    },
-    {
-      "Name": "Matthew Lee",
-      "Gender": "Male",
-      "Age": 22,
-      "Year of Study": 4,
-      "Major": "Computer Science and Artificial Intelligence",
-      "Country of Origin": "Australia",
-      "Languages Spoken": "English",
-      "Hobbies": "Programming - gaming - hiking"
-    },
-    {
-      "Name": "Sofia Lopez",
-      "Gender": "Female",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Architecture",
-      "Country of Origin": "Spain",
-      "Languages Spoken": "Spanish, English",
-      "Hobbies": "Drawing - traveling - photography"
-    },
-    {
-      "Name": "Daniel Kim",
-      "Gender": "Male",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Economics",
-      "Country of Origin": "Canada",
-      "Languages Spoken": "English, Korean",
-      "Hobbies": "Playing soccer - reading - watching movies"
-    },
-    {
-      "Name": "Emma Tan",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Design",
-      "Country of Origin": "Singapore",
-      "Languages Spoken": "English, Chinese",
-      "Hobbies": "Drawing - traveling - photography"
-    },
-    {
-      "Name": "James Wong",
-      "Gender": "Male",
-      "Age": 22,
-      "Year of Study": 4,
-      "Major": "International Relations (Philosophy, Politics, Law, and Economics)",
-      "Country of Origin": "Hong Kong",
-      "Languages Spoken": "English, Chinese",
-      "Hobbies": "Debating - writing - hiking"
-    },
-    {
-      "Name": "Olivia Choi",
-      "Gender": "Female",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Urban Studies",
-      "Country of Origin": "South Korea",
-      "Languages Spoken": "Korean, English",
-      "Hobbies": "Exploring cities - photography - hiking"
-    },
-    {
-      "Name": "Ethan Johnson",
-      "Gender": "Male",
-      "Age": 20,
-      "Year of Study": 2,
-      "Major": "Data and Business Analytics",
-      "Country of Origin": "USA",
-      "Languages Spoken": "English, Spanish",
-      "Hobbies": "Playing soccer - coding - watching movies"
-    },
-    {
-      "Name": "Sophia Garcia",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Design",
-      "Country of Origin": "Mexico",
-      "Languages Spoken": "Spanish, English",
-      "Hobbies": "Painting - reading - hiking"
-    },
-    {
-      "Name": "William Wang",
-      "Gender": "Male",
-      "Age": 22,
-      "Year of Study": 4,
-      "Major": "Computer Science and Artificial Intelligence",
-      "Country of Origin": "China",
-      "Languages Spoken": "Mandarin, English",
-      "Hobbies": "Playing guitar - traveling - photography"
-    },
-    {
-      "Name": "Ava Li",
-      "Gender": "Female",
-      "Age": 20,
-      "Year of Study": 1,
-      "Major": "Business Administration",
-      "Country of Origin": "Canada",
-      "Languages Spoken": "English",
-      "Hobbies": "Playing piano - writing - hiking"
-    },
-    {
-      "Name": "Noah Chen",
-      "Gender": "Male",
-      "Age": 19,
-      "Year of Study": 1,
-      "Major": "Architecture",
-      "Country of Origin": "France",
-      "Languages Spoken": "French, English",
-      "Hobbies": "Drawing - cooking - playing basketball"
-    },
-    {
-      "Name": "Emma Liu",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Economics",
-      "Country of Origin": "Germany",
-      "Languages Spoken": "German, English",
-      "Hobbies": "Playing violin - traveling -"
-    },
-    {
-      "Name": "Mariana Reyes",
-      "Gender": "Female",
-      "Age": 21,
-      "Year of Study": 3,
-      "Major": "Computer Science and Artificial Intelligence",
-      "Country of Origin": "Guatemala",
-      "Languages Spoken": "Spanish, English, French",
-      "Hobbies": "Playing tennis - Working out - Playing piano"
-    }
+  {
+    "Name": "John Smith",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "USA",
+    "Languages Spoken": "English",
+    "Hobbies": "Playing video games, reading, hiking"
+  },
+  {
+    "Name": "Emily Johnson",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Business Administration",
+    "Country of Origin": "Canada",
+    "Languages Spoken": "English, French",
+    "Hobbies": "Painting, playing guitar, photography"
+  },
+  {
+    "Name": "Michael Williams",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Economics",
+    "Country of Origin": "UK",
+    "Languages Spoken": "English",
+    "Hobbies": "Playing football, watching movies, traveling"
+  },
+  {
+    "Name": "Sarah Brown",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 1,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "Australia",
+    "Languages Spoken": "English",
+    "Hobbies": "Writing, photography, dancing"
+  },
+  {
+    "Name": "David Jones",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "Germany",
+    "Languages Spoken": "German, English",
+    "Hobbies": "Drawing, playing piano, cooking"
+  },
+  {
+    "Name": "Jessica Davis",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "France",
+    "Languages Spoken": "French, English",
+    "Hobbies": "Sketching, hiking, reading"
+  },
+  {
+    "Name": "Daniel Miller",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Applied Mathematics",
+    "Country of Origin": "Brazil",
+    "Languages Spoken": "Portuguese, English",
+    "Hobbies": "Playing chess, coding, listening to music"
+  },
+  {
+    "Name": "Olivia Wilson",
+    "Gender": "Female",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "Sweden",
+    "Languages Spoken": "Swedish, English",
+    "Hobbies": "Gardening, hiking, bird watching"
+  },
+  {
+    "Name": "Ethan Moore",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Playing basketball, watching movies, photography"
+  },
+  {
+    "Name": "Sophia Taylor",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "International Relations (Philosophy, Politics, Law, and Economics)",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Debating, writing, yoga"
+  },
+  {
+    "Name": "Benjamin Anderson",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Urban Studies",
+    "Country of Origin": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Exploring cities, photography, cycling"
+  },
+  {
+    "Name": "Ava Thomas",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Fashion Design",
+    "Country of Origin": "Italy",
+    "Languages Spoken": "Italian, English",
+    "Hobbies": "Sewing, fashion illustration, traveling"
+  },
+  {
+    "Name": "Lucas Jackson",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Humanities",
+    "Country of Origin": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing guitar, reading classic literature, painting"
+  },
+  {
+    "Name": "Mia White",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Laws",
+    "Country of Origin": "Russia",
+    "Languages Spoken": "Russian, English",
+    "Hobbies": "Playing piano, writing poetry, skiing"
+  },
+  {
+    "Name": "Logan Harris",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Data and Business Analytics",
+    "Country of Origin": "South Africa",
+    "Languages Spoken": "English, Afrikaans",
+    "Hobbies": "Playing rugby, coding, hiking"
+  },
+  {
+    "Name": "Chloe Martin",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Behaviour and Social Sciences",
+    "Country of Origin": "Netherlands",
+    "Languages Spoken": "Dutch, English",
+    "Hobbies": "Volunteering, hiking, painting"
+  },
+  {
+    "Name": "Liam Martinez",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Philosophy, Politics, Law and Economics",
+    "Country of Origin": "Mexico",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Political activism, playing guitar, reading philosophy"
+  },
+  {
+    "Name": "Isabella Thompson",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Economics",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Watching K-dramas, cooking, playing tennis"
+  },
+  {
+    "Name": "Noah Garcia",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "UAE",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Amelia Hernandez",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "Argentina",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Jack Wilson",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "Canada",
+    "Languages Spoken": "English",
+    "Hobbies": "Hiking, photography, bird watching"
+  },
+  {
+    "Name": "Sophie Nguyen",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Applied Mathematics",
+    "Country of Origin": "Vietnam",
+    "Languages Spoken": "Vietnamese, English",
+    "Hobbies": "Playing piano, reading, coding"
+  },
+  {
+    "Name": "Ethan Ng",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "Singapore",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Playing basketball, watching movies, programming"
+  },
+  {
+    "Name": "Ella Chen",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "Taiwan",
+    "Languages Spoken": "Chinese, English",
+    "Hobbies": "Dancing, painting, photography"
+  },
+  {
+    "Name": "Matthew Lee",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "Australia",
+    "Languages Spoken": "English",
+    "Hobbies": "Programming, gaming, hiking"
+  },
+  {
+    "Name": "Sofia Lopez",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "Daniel Kim",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Economics",
+    "Country of Origin": "Canada",
+    "Languages Spoken": "English, Korean",
+    "Hobbies": "Playing soccer, reading, watching movies"
+  },
+  {
+    "Name": "Emma Tan",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "Singapore",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "James Wong",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "International Relations (Philosophy, Politics, Law, and Economics)",
+    "Country of Origin": "Hong Kong",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Debating, writing, hiking"
+  },
+  {
+    "Name": "Olivia Choi",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Urban Studies",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Exploring cities, photography, hiking"
+  },
+  {
+    "Name": "Ethan Johnson",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Data and Business Analytics",
+    "Country of Origin": "USA",
+    "Languages Spoken": "English, Spanish",
+    "Hobbies": "Playing soccer, coding, watching movies"
+  },
+  {
+    "Name": "Sophia Garcia",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "Mexico",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Painting, reading, hiking"
+  },
+  {
+    "Name": "William Wang",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Playing guitar, traveling, photography"
+  },
+  {
+    "Name": "Ava Li",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "Canada",
+    "Languages Spoken": "English",
+    "Hobbies": "Playing piano, writing, hiking"
+  },
+  {
+    "Name": "Noah Chen",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "France",
+    "Languages Spoken": "French, English",
+    "Hobbies": "Drawing, cooking, playing basketball"
+  },
+  {
+    "Name": "Emma Liu",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Economics",
+    "Country of Origin": "Germany",
+    "Languages Spoken": "German, English",
+    "Hobbies": "Playing violin, traveling"
+  },
+  {
+    "Name": "James Lee",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "UK",
+    "Languages Spoken": "English",
+    "Hobbies": "Dancing, writing, photography"
+  },
+  {
+    "Name": "Olivia Kim",
+    "Gender": "Female",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "PPLE",
+    "Country of Origin": "Australia",
+    "Languages Spoken": "English",
+    "Hobbies": "Debating, painting, traveling"
+  },
+  {
+    "Name": "Sophia Song",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "International Relations (PPLE)",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Writing, playing piano, hiking"
+  },
+  {
+    "Name": "Alexander Zhang",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Urban Studies",
+    "Country of Origin": "USA",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Exploring cities, photography, cycling"
+  },
+  {
+    "Name": "Emily Wong",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Fashion Design",
+    "Country of Origin": "Italy",
+    "Languages Spoken": "Italian, English",
+    "Hobbies": "Sewing, reading, traveling"
+  },
+  {
+    "Name": "Daniel Hu",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "Canada",
+    "Languages Spoken": "English",
+    "Hobbies": "Hiking, bird watching, gardening"
+  },
+  {
+    "Name": "Mia Chen",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Laws",
+    "Country of Origin": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Reading, playing tennis, photography"
+  },
+  {
+    "Name": "Logan Gonzalez",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Data and Business Analytics",
+    "Country of Origin": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing rugby, coding, hiking"
+  },
+  {
+    "Name": "Chloe Liu",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Behaviour and Social Sciences",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Volunteering, hiking, painting"
+  },
+  {
+    "Name": "Liam Martin",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "PPLE",
+    "Country of Origin": "USA",
+    "Languages Spoken": "English",
+    "Hobbies": "Political activism, playing guitar, reading philosophy"
+  },
+  {
+    "Name": "Isabella Yang",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Economics",
+    "Country of Origin": "Canada",
+    "Languages Spoken": "English",
+    "Hobbies": "Watching K-dramas, cooking, playing tennis"
+  },
+  {
+    "Name": "Noah Kim",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Amelia Zhao",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "Germany",
+    "Languages Spoken": "German, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Jack Wong",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "USA",
+    "Languages Spoken": "English",
+    "Hobbies": "Hiking, photography, bird watching"
+  },
+  {
+    "Name": "Sophie Tran",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Applied Mathematics",
+    "Country of Origin": "Vietnam",
+    "Languages Spoken": "Vietnamese, English",
+    "Hobbies": "Playing piano, reading, coding"
+  },
+  {
+    "Name": "Ethan Wang",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "Singapore",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Playing basketball, watching movies, programming"
+  },
+  {
+    "Name": "Ella Huang",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "Taiwan",
+    "Languages Spoken": "Chinese, English",
+    "Hobbies": "Dancing, painting, photography"
+  },
+  {
+    "Name": "Matthew Lin",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "Australia",
+    "Languages Spoken": "English",
+    "Hobbies": "Programming, gaming, hiking"
+  },
+  {
+    "Name": "Sofia Kim",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "Daniel Wu",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Economics",
+    "Country of Origin": "Canada",
+    "Languages Spoken": "English, Korean",
+    "Hobbies": "Playing soccer, reading, watching movies"
+  },
+  {
+    "Name": "Emma Song",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "Singapore",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "James Yang",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "International Relations (PPLE)",
+    "Country of Origin": "Hong Kong",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Debating, writing, hiking"
+  },
+  {
+    "Name": "Olivia Cheng",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Urban Studies",
+    "Country of Origin": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Exploring cities, photography, hiking"
+  },
+  {
+    "Name": "Mohammed Abdullah",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "Saudi Arabia",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing soccer, coding, watching movies"
+  },
+  {
+    "Name": "Lei Chen",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Business Administration",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Playing piano, reading, hiking"
+  },
+  {
+    "Name": "Ravi Gupta",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Economics",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing guitar, traveling, photography"
+  },
+  {
+    "Name": "Sofia Alvarez",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 1,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "Mexico",
+    "Languages Spoken": "Spanish",
+    "Hobbies": "Dancing, writing, photography"
+  },
+  {
+    "Name": "Ahmed Mohamed",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "Egypt",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Drawing, cooking, playing basketball"
+  },
+  {
+    "Name": "Yuna Kim",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Sketching, painting, traveling"
+  },
+  {
+    "Name": "Carlos Rodriguez",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Applied Mathematics",
+    "Country of Origin": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing chess, coding, listening to music"
+  },
+  {
+    "Name": "Maria Santos",
+    "Gender": "Female",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "Brazil",
+    "Languages Spoken": "Portuguese, English",
+    "Hobbies": "Gardening, hiking, bird watching"
+  },
+  {
+    "Name": "Sajid Khan",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "Pakistan",
+    "Languages Spoken": "Urdu, English",
+    "Hobbies": "Playing cricket, reading, photography"
+  },
+  {
+    "Name": "Priya Singh",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "International Relations (PPLE)",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Debating, writing, yoga"
+  },
+  {
+    "Name": "Khalid Al-Mansoori",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Urban Studies",
+    "Country of Origin": "UAE",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Exploring cities, photography, cycling"
+  },
+  {
+    "Name": "Jasmine Lee",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Fashion Design",
+    "Country of Origin": "Singapore",
+    "Languages Spoken": "English, Chinese",
+    "Hobbies": "Sewing, fashion illustration, traveling"
+  },
+  {
+    "Name": "Mateo Garcia",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Humanities",
+    "Country of Origin": "Colombia",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing guitar, reading classic literature, painting"
+  },
+  {
+    "Name": "Camila Fernandez",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Laws",
+    "Country of Origin": "Argentina",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing piano, writing poetry, skiing"
+  },
+  {
+    "Name": "Yousef Al-Mahmoud",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Data and Business Analytics",
+    "Country of Origin": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing rugby, coding, hiking"
+  },
 
-   ]
+  {
+    "Name": "Fatima Al-Said",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Behaviour and Social Sciences",
+    "Country of Origin": "Saudi Arabia",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Volunteering, hiking, painting"
+  },
+  {
+    "Name": "Aryan Patel",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "PPLE",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Political activism, playing guitar, reading philosophy"
+  },
+  {
+    "Name": "Ananya Rao",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Economics",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Watching Bollywood movies, cooking, playing tennis"
+  },
+  {
+    "Name": "Jung-Hoon Park",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Hina Islam",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "Bangladesh",
+    "Languages Spoken": "Bengali, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Abdulrahman Al-Mansoori",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 1,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "UAE",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Hiking, bird watching, gardening"
+  },
+  {
+    "Name": "Amina Ali",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Applied Mathematics",
+    "Country of Origin": "Kenya",
+    "Languages Spoken": "Swahili, English",
+    "Hobbies": "Playing piano, reading, coding"
+  },
+  {
+    "Name": "Youssef Abdel-Hamid",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "Egypt",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing basketball, watching movies, programming"
+  },
+  {
+    "Name": "Nina Wang",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Dancing, painting, photography"
+  },
+  {
+    "Name": "Sanjay Patil",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Programming, gaming, hiking"
+  },
+  {
+    "Name": "Laila Abdel-Rahman",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "Egypt",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "Mohan Subramanian",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Economics",
+    "Country of Origin": "India",
+    "Languages Spoken": "Tamil, English",
+    "Hobbies": "Playing soccer, reading, watching movies"
+  },
+  {
+    "Name": "Meera Nair",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Li Liu",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "PPLE",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Debating, writing, hiking"
+  },
+  {
+    "Name": "Yuki Takahashi",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Urban Studies",
+    "Country of Origin": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Exploring cities, photography, hiking"
+  },
+  {
+    "Name": "Ali Al-Farsi",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "Oman",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing soccer, coding, watching movies"
+  },
+  {
+    "Name": "Wei Chen",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Business Administration",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Playing piano, reading, hiking"
+  },
+  {
+    "Name": "Raj Singh",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Economics",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing guitar, traveling, photography"
+  },
+  {
+    "Name": "Mei Li",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 1,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin",
+    "Hobbies": "Dancing, writing, photography"
+  },
+  {
+    "Name": "Karim El-Sayed",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "Egypt",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Drawing, cooking, playing basketball"
+  },
+  {
+    "Name": "Yui Kim",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Sketching, painting, traveling"
+  },
+  {
+    "Name": "Javier Garcia",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Applied Mathematics",
+    "Country of Origin": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing chess, coding, listening to music"
+  },
+  {
+    "Name": "Ana Silva",
+    "Gender": "Female",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "Portugal",
+    "Languages Spoken": "Portuguese, English",
+    "Hobbies": "Gardening, hiking, bird watching"
+  },
+  {
+    "Name": "Muhammad Khan",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "Pakistan",
+    "Languages Spoken": "Urdu, English",
+    "Hobbies": "Playing cricket, reading, photography"
+  },
+  {
+    "Name": "Sunita Patel",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "PPLE",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Debating, writing, yoga"
+  },
+  {
+    "Name": "Ahmed Al-Hassan",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Urban Studies",
+    "Country of Origin": "Kuwait",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Exploring cities, photography, cycling"
+  },
+  {
+    "Name": "Yuki Sato",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Fashion Design",
+    "Country of Origin": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Sewing, fashion illustration, traveling"
+  },
+  {
+    "Name": "Diego Fernandez",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Humanities",
+    "Country of Origin": "Argentina",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing guitar, reading classic literature, painting"
+  },
+  {
+    "Name": "Isabel Gomez",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Laws",
+    "Country of Origin": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing piano, writing poetry, skiing"
+  },
+  {
+    "Name": "Mohammed Al-Khalifa",
+    "Gender": "Male",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Data and Business Analytics",
+    "Country of Origin": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing rugby, coding, hiking"
+  },
+  {
+    "Name": "Leila Khan",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Behaviour and Social Sciences",
+    "Country of Origin": "Bangladesh",
+    "Languages Spoken": "Bengali, English",
+    "Hobbies": "Volunteering, hiking, painting"
+  },
+  {
+    "Name": "Aarav Sharma",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "PPLE",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Political activism, playing guitar, reading philosophy"
+  },
+  {
+    "Name": "Neha Joshi",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Economics",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Watching Bollywood movies, cooking, playing tennis"
+  },
+  {
+    "Name": "Seung-Hoon Park",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Yasmin Khan",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "Bangladesh",
+    "Languages Spoken": "Bengali, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Abdullah Al-Mazrouei",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 1,
+    "Major": "Environmental Sciences for Sustainability",
+    "Country of Origin": "UAE",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Hiking, bird watching, gardening"
+  },
+  {
+    "Name": "Nairobi Odongo",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Applied Mathematics",
+    "Country of Origin": "Kenya",
+    "Languages Spoken": "Swahili, English",
+    "Hobbies": "Playing piano, reading, coding"
+  },
+  {
+    "Name": "Zain Abdullah",
+    "Gender": "Male",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Business Administration",
+    "Country of Origin": "Saudi Arabia",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing basketball, watching movies, programming"
+  },
+  {
+    "Name": "Sakura Yamamoto",
+    "Gender": "Female",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Communication and Digital Media",
+    "Country of Origin": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Dancing, painting, photography"
+  },
+  {
+    "Name": "Aarav Desai",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "Computer Science and Artificial Intelligence",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Programming, gaming, hiking"
+  },
+  {
+    "Name": "Priya Rao",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Architecture",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "Anish Menon",
+    "Gender": "Male",
+    "Age": 20,
+    "Year of Study": 2,
+    "Major": "Economics",
+    "Country of Origin": "India",
+    "Languages Spoken": "Tamil, English",
+    "Hobbies": "Playing soccer, reading, watching movies"
+  },
+  {
+    "Name": "Neha Nair",
+    "Gender": "Female",
+    "Age": 21,
+    "Year of Study": 3,
+    "Major": "Design",
+    "Country of Origin": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Hao Li",
+    "Gender": "Male",
+    "Age": 22,
+    "Year of Study": 4,
+    "Major": "PPLE",
+    "Country of Origin": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Debating, writing, hiking"
+  },
+  {
+    "Name": "Yuka Nakamura",
+    "Gender": "Female",
+    "Age": 19,
+    "Year of Study": 1,
+    "Major": "Urban Studies",
+    "Country of Origin": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Exploring cities, photography, hiking"
+  },
+  
+  {
+    "Name": "Rahul Choudhury",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing cricket, coding, watching movies"
+  },
+  {
+    "Name": "Xin Huang",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Business Administration",
+    "Country": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Playing piano, reading, hiking"
+  },
+  {
+    "Name": "Siddharth Sharma",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Economics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing guitar, traveling, photography"
+  },
+  {
+    "Name": "Ji-Woo Park",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 1,
+    "Field": "Communication and Digital Media",
+    "Country": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Dancing, writing, photography"
+  },
+  {
+    "Name": "Youssef Khalifa",
+    "Gender": "Male",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Architecture",
+    "Country": "Egypt",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Drawing, cooking, playing basketball"
+  },
+  {
+    "Name": "Jia Li",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Design",
+    "Country": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Sketching, painting, traveling"
+  },
+  {
+    "Name": "Antonio Rodriguez",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Applied Mathematics",
+    "Country": "Mexico",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing chess, coding, listening to music"
+  },
+  {
+    "Name": "Luna Silva",
+    "Gender": "Female",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Environmental Sciences for Sustainability",
+    "Country": "Brazil",
+    "Languages Spoken": "Portuguese, English",
+    "Hobbies": "Gardening, hiking, bird watching"
+  },
+  {
+    "Name": "Aya Al-Saud",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 1,
+    "Field": "Business Administration",
+    "Country": "Saudi Arabia",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing cricket, reading, photography"
+  },
+  {
+    "Name": "Rahul Das",
+    "Gender": "Male",
+    "Age": 21,
+    "Year": 3,
+    "Field": "PPE",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Debating, writing, yoga"
+  },
+  {
+    "Name": "Ahmed Al-Farsi",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Urban Studies",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Exploring cities, photography, cycling"
+  },
+  {
+    "Name": "Naoko Kato",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Fashion Design",
+    "Country": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Sewing, fashion illustration, traveling"
+  },
+  {
+    "Name": "Miguel Hernandez",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Humanities",
+    "Country": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing guitar, reading classic literature, painting"
+  },
+  {
+    "Name": "Sophia Fernandez",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Laws",
+    "Country": "Argentina",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing piano, writing poetry, skiing"
+  },
+  {
+    "Name": "Abdullah Al-Jaber",
+    "Gender": "Male",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Data and Business Analytics",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing rugby, coding, hiking"
+  },
+  {
+    "Name": "Sara Al-Ali",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Behaviour and Social Sciences",
+    "Country": "Kuwait",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Volunteering, hiking, painting"
+  },
+  {
+    "Name": "Arjun Patel",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "PPE",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Political activism, playing guitar, reading philosophy"
+  },
+  {
+    "Name": "Neha Singh",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Economics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Watching Bollywood movies, cooking, playing tennis"
+  },
+  {
+    "Name": "Seung-Min Kim",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Yasmine Abdullah",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Design",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Rashid Al-Thani",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 1,
+    "Field": "Environmental Sciences for Sustainability",
+    "Country": "UAE",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Hiking, bird watching, gardening"
+  },
+  {
+    "Name": "Shreya Patel",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Applied Mathematics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing piano, reading, coding"
+  },
+  {
+    "Name": "Hamad Al-Mansoori",
+    "Gender": "Male",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Business Administration",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing basketball, watching movies, programming"
+  },
+  {
+    "Name": "Eriko Yamamoto",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Communication and Digital Media",
+    "Country": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Dancing, painting, photography"
+  },
+  {
+    "Name": "Aryan Shah",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Programming, gaming, hiking"
+  },
+  {
+    "Name": "Sofia Rossi",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Architecture",
+    "Country": "Italy",
+    "Languages Spoken": "Italian, English",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "Aman Kumar",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Economics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing soccer, reading, watching movies"
+  },
+  {
+    "Name": "Riya Gupta",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Design",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Hiroshi Sato",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "PPE",
+    "Country": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Debating, writing, hiking"
+  },
+  {
+    "Name": "Mei Lee",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Urban Studies",
+    "Country": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Exploring cities, photography, hiking"
+  },
+  {
+    "Name": "Sanjay Patel",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Riya Sharma",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Business Administration",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Dancing, reading, hiking"
+  },
+  {
+    "Name": "Fahad Al-Sheikh",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Economics",
+    "Country": "UAE",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing soccer, traveling, photography"
+  },
+  {
+    "Name": "Akari Takahashi",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Communication and Digital Media",
+    "Country": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Writing, painting, photography"
+  },
+  {
+    "Name": "Mohammed Khan",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "Pakistan",
+    "Languages Spoken": "Urdu, English",
+    "Hobbies": "Playing cricket, coding, watching movies"
+  },
+  {
+    "Name": "Yuan Li",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Business Administration",
+    "Country": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Playing piano, reading, hiking"
+  },
+  {
+    "Name": "Rajendra Patil",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Economics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing guitar, traveling, photography"
+  },
+  {
+    "Name": "Ji-Young Park",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 1,
+    "Field": "Communication and Digital Media",
+    "Country": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Dancing, writing, photography"
+  },
+  {
+    "Name": "Amr El-Sayed",
+    "Gender": "Male",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Architecture",
+    "Country": "Egypt",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Drawing, cooking, playing basketball"
+  },
+  {
+    "Name": "Hae-Won Kim",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Design",
+    "Country": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Sketching, painting, traveling"
+  },
+  {
+    "Name": "Carlos Gonzalez",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Applied Mathematics",
+    "Country": "Spain",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing chess, coding, listening to music"
+  },
+  {
+    "Name": "Ana Silveira",
+    "Gender": "Female",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Environmental Sciences for Sustainability",
+    "Country": "Brazil",
+    "Languages Spoken": "Portuguese, English",
+    "Hobbies": "Gardening, hiking, bird watching"
+  },
+  {
+    "Name": "Noor Al-Mansoori",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 1,
+    "Field": "Business Administration",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing cricket, reading, photography"
+  },
+  {
+    "Name": "Rajiv Sharma",
+    "Gender": "Male",
+    "Age": 21,
+    "Year": 3,
+    "Field": "PPE",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Debating, writing, yoga"
+  },
+  {
+    "Name": "Khalid Al-Kuwari",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Urban Studies",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Exploring cities, photography, cycling"
+  },
+  {
+    "Name": "Aiko Sato",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Fashion Design",
+    "Country": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Sewing, fashion illustration, traveling"
+  },
+  {
+    "Name": "Gabriel Rodriguez",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Humanities",
+    "Country": "Mexico",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing guitar, reading classic literature, painting"
+  },
+  {
+    "Name": "Isabella Fernandez",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Laws",
+    "Country": "Argentina",
+    "Languages Spoken": "Spanish, English",
+    "Hobbies": "Playing piano, writing poetry, skiing"
+  },
+  {
+    "Name": "Ahmed Al-Mohammed",
+    "Gender": "Male",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Data and Business Analytics",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing rugby, coding, hiking"
+  },
+  {
+    "Name": "Fatima Al-Thani",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Behaviour and Social Sciences",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Volunteering, hiking, painting"
+  },
+  {
+    "Name": "Rajesh Patel",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "PPE",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Political activism, playing guitar, reading philosophy"
+  },
+  {
+    "Name": "Nisha Singh",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Economics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Watching Bollywood movies, cooking, playing tennis"
+  },
+  {
+    "Name": "Hyun-Min Kim",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "South Korea",
+    "Languages Spoken": "Korean, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Rina Abdullah",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Design",
+    "Country": "Qatar",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Hamad Al-Khalifa",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 1,
+    "Field": "Environmental Sciences for Sustainability",
+    "Country": "Bahrain",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Hiking, bird watching, gardening"
+  },
+  {
+    "Name": "Nikita Patel",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Applied Mathematics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing piano, reading, coding"
+  },
+  {
+    "Name": "Abdullah Al-Sheikh",
+    "Gender": "Male",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Business Administration",
+    "Country": "Saudi Arabia",
+    "Languages Spoken": "Arabic, English",
+    "Hobbies": "Playing basketball, watching movies, programming"
+  },
+  {
+    "Name": "Yuki Yoshida",
+    "Gender": "Female",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Communication and Digital Media",
+    "Country": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Dancing, painting, photography"
+  },
+  {
+    "Name": "Aryan Sharma",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Programming, gaming, hiking"
+  },
+  {
+    "Name": "Sofia Rossi",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Architecture",
+    "Country": "Italy",
+    "Languages Spoken": "Italian, English",
+    "Hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "Name": "Aman Kumar",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Economics",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing soccer, reading, watching movies"
+  },
+  {
+    "Name": "Riya Gupta",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Design",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Painting, traveling, photography"
+  },
+  {
+    "Name": "Hiroshi Sato",
+    "Gender": "Male",
+    "Age": 22,
+    "Year": 4,
+    "Field": "PPE",
+    "Country": "Japan",
+    "Languages Spoken": "Japanese, English",
+    "Hobbies": "Debating, writing, hiking"
+  },
+  {
+    "Name": "Mei Lee",
+    "Gender": "Female",
+    "Age": 19,
+    "Year": 1,
+    "Field": "Urban Studies",
+    "Country": "China",
+    "Languages Spoken": "Mandarin, English",
+    "Hobbies": "Exploring cities, photography, hiking"
+  },
+  {
+    "Name": "Sanjay Patel",
+    "Gender": "Male",
+    "Age": 20,
+    "Year": 2,
+    "Field": "Computer Science and Artificial Intelligence",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "Name": "Riya Sharma",
+    "Gender": "Female",
+    "Age": 21,
+    "Year": 3,
+    "Field": "Business Administration",
+    "Country": "India",
+    "Languages Spoken": "Hindi, English",
+    "Hobbies": "Dancing, reading, hiking"
+  },
+  {
+    "name": "Fahad Al-Sheikh",
+    "gender": "Male",
+    "age": 22,
+    "year": 4,
+    "major": "Economics",
+    "country": "UAE",
+    "languages": "Arabic, English",
+    "hobbies": "Playing soccer, traveling, photography"
+  },
+  {
+    "name": "Akari Takahashi",
+    "gender": "Female",
+    "age": 19,
+    "year": 1,
+    "major": "Communication and Digital Media",
+    "country": "Japan",
+    "languages": "Japanese, English",
+    "hobbies": "Writing, painting, photography"
+  },
+  {
+    "name": "Mohammed Abdullah",
+    "gender": "Male",
+    "age": 20,
+    "year": 2,
+    "major": "Computer Science and Artificial Intelligence",
+    "country": "Saudi Arabia",
+    "languages": "Arabic, English",
+    "hobbies": "Playing soccer, coding, watching movies"
+  },
+  {
+    "name": "Yuan Li",
+    "gender": "Female",
+    "age": 21,
+    "year": 3,
+    "major": "Business Administration",
+    "country": "China",
+    "languages": "Mandarin, English",
+    "hobbies": "Playing piano, reading, hiking"
+  },
+  {
+    "name": "Rajendra Patil",
+    "gender": "Male",
+    "age": 22,
+    "year": 4,
+    "major": "Economics",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Playing guitar, traveling, photography"
+  },
+  {
+    "name": "Ji-Young Park",
+    "gender": "Female",
+    "age": 20,
+    "year": 1,
+    "major": "Communication and Digital Media",
+    "country": "South Korea",
+    "languages": "Korean, English",
+    "hobbies": "Dancing, writing, photography"
+  },
+  {
+    "name": "Amr El-Sayed",
+    "gender": "Male",
+    "age": 19,
+    "year": 1,
+    "major": "Architecture",
+    "country": "Egypt",
+    "languages": "Arabic, English",
+    "hobbies": "Drawing, cooking, playing basketball"
+  },
+  {
+    "name": "Hae-Won Kim",
+    "gender": "Female",
+    "age": 21,
+    "year": 3,
+    "major": "Design",
+    "country": "South Korea",
+    "languages": "Korean, English",
+    "hobbies": "Sketching, painting, traveling"
+  },
+  {
+    "name": "Carlos Gonzalez",
+    "gender": "Male",
+    "age": 20,
+    "year": 2,
+    "major": "Applied Mathematics",
+    "country": "Spain",
+    "languages": "Spanish, English",
+    "hobbies": "Playing chess, coding, listening to music"
+  },
+  {
+    "name": "Ana Silveira",
+    "gender": "Female",
+    "age": 22,
+    "year": 4,
+    "major": "Environmental Sciences for Sustainability",
+    "country": "Brazil",
+    "languages": "Portuguese, English",
+    "hobbies": "Gardening, hiking, bird watching"
+  },
+  {
+    "name": "Noor Al-Mansoori",
+    "gender": "Female",
+    "age": 20,
+    "year": 1,
+    "major": "Business Administration",
+    "country": "Qatar",
+    "languages": "Arabic, English",
+    "hobbies": "Playing cricket, reading, photography"
+  },
+  {
+    "name": "Rajiv Sharma",
+    "gender": "Male",
+    "age": 21,
+    "year": 3,
+    "major": "PPLE",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Debating, writing, yoga"
+  },
+  {
+    "name": "Khalid Al-Kuwari",
+    "gender": "Male",
+    "age": 20,
+    "year": 2,
+    "major": "Urban Studies",
+    "country": "Qatar",
+    "languages": "Arabic, English",
+    "hobbies": "Exploring cities, photography, cycling"
+  },
+  {
+    "name": "Aiko Sato",
+    "gender": "Female",
+    "age": 19,
+    "year": 1,
+    "major": "Fashion Design",
+    "country": "Japan",
+    "languages": "Japanese, English",
+    "hobbies": "Sewing, fashion illustration, traveling"
+  },
+  {
+    "name": "Gabriel Rodriguez",
+    "gender": "Male",
+    "age": 22,
+    "year": 4,
+    "major": "Humanities",
+    "country": "Mexico",
+    "languages": "Spanish, English",
+    "hobbies": "Playing guitar, reading classic literature, painting"
+  },
+  {
+    "name": "Isabella Fernandez",
+    "gender": "Female",
+    "age": 20,
+    "year": 2,
+    "major": "Laws",
+    "country": "Argentina",
+    "languages": "Spanish, English",
+    "hobbies": "Playing piano, writing poetry, skiing"
+  },
+  {
+    "name": "Ahmed Al-Mohammed",
+    "gender": "Male",
+    "age": 21,
+    "year": 3,
+    "major": "Data and Business Analytics",
+    "country": "Qatar",
+    "languages": "Arabic, English",
+    "hobbies": "Playing rugby, coding, hiking"
+  },
+  {
+    "name": "Fatima Al-Thani",
+    "gender": "Female",
+    "age": 20,
+    "year": 2,
+    "major": "Behaviour and Social Sciences",
+    "country": "Qatar",
+    "languages": "Arabic, English",
+    "hobbies": "Volunteering, hiking, painting"
+  },
+  {
+    "name": "Rajesh Patel",
+    "gender": "Male",
+    "age": 22,
+    "year": 4,
+    "major": "PPLE",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Political activism, playing guitar, reading philosophy"
+  },
+  {
+    "name": "Nisha Singh",
+    "gender": "Female",
+    "age": 19,
+    "year": 1,
+    "major": "Economics",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Watching Bollywood movies, cooking, playing tennis"
+  },
+  {
+    "name": "Hyun-Min Kim",
+    "gender": "Male",
+    "age": 20,
+    "year": 2,
+    "major": "Computer Science and Artificial Intelligence",
+    "country": "South Korea",
+    "languages": "Korean, English",
+    "hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "name": "Rina Abdullah",
+    "gender": "Female",
+    "age": 21,
+    "year": 3,
+    "major": "Design",
+    "country": "Qatar",
+    "languages": "Arabic, English",
+    "hobbies": "Painting, traveling, photography"
+  },
+  {
+    "name": "Hamad Al-Khalifa",
+    "gender": "Male",
+    "age": 20,
+    "year": 1,
+    "major": "Environmental Sciences for Sustainability",
+    "country": "Bahrain",
+    "languages": "Arabic, English",
+    "hobbies": "Hiking, bird watching, gardening"
+  },
+  {
+    "name": "Nikita Patel",
+    "gender": "Female",
+    "age": 21,
+    "year": 3,
+    "major": "Applied Mathematics",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Playing piano, reading, coding"
+  },
+  {
+    "name": "Abdullah Al-Sheikh",
+    "gender": "Male",
+    "age": 19,
+    "year": 1,
+    "major": "Business Administration",
+    "country": "Saudi Arabia",
+    "languages": "Arabic, English",
+    "hobbies": "Playing basketball, watching movies, programming"
+  },
+  {
+    "name": "Yuki Yoshida",
+    "gender": "Female",
+    "age": 20,
+    "year": 2,
+    "major": "Communication and Digital Media",
+    "country": "Japan",
+    "languages": "Japanese, English",
+    "hobbies": "Dancing, painting, photography"
+  },
+  {
+    "name": "Aryan Sharma",
+    "gender": "Male",
+    "age": 22,
+    "year": 4,
+    "major": "Computer Science and Artificial Intelligence",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Programming, gaming, hiking"
+  },
+  {
+    "name": "Sofia Rossi",
+    "gender": "Female",
+    "age": 19,
+    "year": 1,
+    "major": "Architecture",
+    "country": "Italy",
+    "languages": "Italian, English",
+    "hobbies": "Drawing, traveling, photography"
+  },
+  {
+    "name": "Aman Kumar",
+    "gender": "Male",
+    "age": 20,
+    "year": 2,
+    "major": "Economics",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Playing soccer, reading, watching movies"
+  },
+  {
+    "name": "Riya Gupta",
+    "gender": "Female",
+    "age": 21,
+    "year": 3,
+    "major": "Design",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Painting, traveling, photography"
+  },
+  {
+    "name": "Hiroshi Sato",
+    "gender": "Male",
+    "age": 22,
+    "year": 4,
+    "major": "PPLE",
+    "country": "Japan",
+    "languages": "Japanese, English",
+    "hobbies": "Debating, writing, hiking"
+  },
+  {
+    "name": "Mei Lee",
+    "gender": "Female",
+    "age": 19,
+    "year": 1,
+    "major": "Urban Studies",
+    "country": "China",
+    "languages": "Mandarin, English",
+    "hobbies": "Exploring cities, photography, hiking"
+  },
+  {
+    "name": "Sanjay Patel",
+    "gender": "Male",
+    "age": 20,
+    "year": 2,
+    "major": "Computer Science and Artificial Intelligence",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Playing video games, coding, photography"
+  },
+  {
+    "name": "Riya Sharma",
+    "gender": "Female",
+    "age": 21,
+    "year": 3,
+    "major": "Business Administration",
+    "country": "India",
+    "languages": "Hindi, English",
+    "hobbies": "Dancing, reading, hiking"
+  }
+]
+   
+ 
