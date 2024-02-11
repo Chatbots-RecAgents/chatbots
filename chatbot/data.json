@@ -358,5 +358,16 @@
       "Country of Origin": "Germany",
       "Languages Spoken": "German, English",
       "Hobbies": "Playing violin - traveling -"
+    },
+    {
+      "Name": "Mariana Reyes",
+      "Gender": "Female",
+      "Age": 21,
+      "Year of Study": 3,
+      "Major": "Computer Science and Artificial Intelligence",
+      "Country of Origin": "Guatemala",
+      "Languages Spoken": "Spanish, English, French",
+      "Hobbies": "Playing tennis - Working out - Playing piano"
     }
+
    ]
