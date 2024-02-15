@@ -3,7 +3,7 @@ import logging
 from utils.timer import Timer
 #import the dataset with EDA
 from utils.python_utils import binarize
-from recommenders.models.sar import SAR #pip install?
+from models.sar import SAR 
 
 def train_and_test_sar(train_data, test_data, top_k=10):
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)-8s %(message)s')
