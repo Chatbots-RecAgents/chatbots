@@ -1,26 +1,9 @@
-import sys
 import logging
-import numpy as np
-import pandas as pd
-from sklearn.preprocessing import minmax_scale
 
-from recommenders.utils.timer import Timer
-from recommenders.datasets import movielens
-from recommenders.utils.python_utils import binarize
-from recommenders.datasets.python_splitters import python_stratified_split
-from recommenders.models.sar import SAR
-from recommenders.evaluation.python_evaluation import (
-    map,
-    ndcg_at_k,
-    precision_at_k,
-    recall_at_k,
-    rmse,
-    mae,
-    logloss,
-    rsquared,
-    exp_var
-)
-from recommenders.utils.notebook_utils import store_metadata
+from utils.timer import Timer
+#import the dataset with EDA
+from utils.python_utils import binarize
+from recommenders.models.sar import SAR #pip install?
 
 def train_and_test_sar(train_data, test_data, top_k=10):
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)-8s %(message)s')
