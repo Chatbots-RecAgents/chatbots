@@ -28,11 +28,16 @@ def display_question():
         
         if response:  # Ensuring response is captured before moving on
             st.session_state.responses[key] = response.strip()
+            # Move the condition check for the last question inside the if response block
             if st.session_state.current_question_index < len(questions) - 1:
                 st.session_state.current_question_index += 1
-                st.rerun()
             else:
                 st.session_state.ready_to_finalize = True
+                # Call finalize_conversation directly if all questions are answered
+                finalize_conversation()
+                return  # Add a return statement to exit the function early
+            st.rerun()
+
 
 def finalize_conversation():
     if st.session_state.ready_to_finalize:
