@@ -47,8 +47,8 @@ def finalize_conversation():
 def save_to_csv(responses):
     # Ensure the order of responses matches your desired CSV format
     ordered_keys = ['name', 'age', 'gender', 'nationality', 'major', 'languages', 'hobbies', 'Recommendation', 'Timestamp']
-    #responses['Recommendation'] = "Based on your interests, you might enjoy playing tennis with Juan."
-    #responses['Timestamp'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    responses['Recommendation'] = "Based on your interests, you might enjoy playing tennis with Juan."
+    responses['Timestamp'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
     # Convert responses to match the ordered keys
     ordered_responses = {key: responses.get(key, '') for key in ordered_keys}
