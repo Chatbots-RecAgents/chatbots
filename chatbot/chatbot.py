@@ -2,75 +2,70 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-# Initialize session state for conversation flow
-if 'responses' not in st.session_state:
+# Initialize or reset session state variables at the start
+if 'init' not in st.session_state:
     st.session_state.responses = {}
-if 'current_question_index' not in st.session_state:
     st.session_state.current_question_index = 0
+    st.session_state.ready_to_finalize = False
+    st.session_state.init = True
 
-# Questions and corresponding keys
+# Define questions and their corresponding keys
 questions = [
     ("What's your name?", "name"),
     ("How old are you?", "age"),
-    ("What is your gender? (Feel free to specify as you wish)", "gender"),
+    ("What is your gender?", "gender"),
     ("Where are you from?", "nationality"),
     ("What is your major at IE?", "major"),
-    ("Which languages do you speak? (Separate by comma if more than one)", "languages"),
+    ("Which languages do you speak?", "languages"),
     ("What do you like to do in your free time?", "hobbies"),
 ]
 
-# Function to move to the next question
-def next_question():
-    if st.session_state.current_question_index < len(questions) - 1:
-        st.session_state.current_question_index += 1
-    else:
-        st.session_state.ready_to_finalize = True
-
-# Display the current question
-def display_current_question():
-    if 'current_question_index' in st.session_state:
-        # Unique key for each question based on its index to avoid DuplicateWidgetID error
-        current_question, key = questions[st.session_state.current_question_index]
-        unique_key = f"{key}_{st.session_state.current_question_index}"
-        user_response = st.text_input(current_question, key=unique_key, on_change=next_question)
+def display_question():
+    if st.session_state.current_question_index < len(questions):
+        question, key = questions[st.session_state.current_question_index]
+        response = st.text_input(question, key=key)
         
-        if user_response:
-            # Strip and save the response using the original key
-            st.session_state.responses[key] = user_response.strip()
+        if response:  # Ensuring response is captured before moving on
+            st.session_state.responses[key] = response.strip()
+            if st.session_state.current_question_index < len(questions) - 1:
+                st.session_state.current_question_index += 1
+                st.rerun()
+            else:
+                st.session_state.ready_to_finalize = True
 
-# Finalize conversation and save to CSV
 def finalize_conversation():
-    recommendation = "Based on your interests, you might enjoy playing tennis with Juan."
-    name = st.session_state.responses.get('name', 'there')
-    st.write(f"Hello {name}, {recommendation}")
-    
-    save_conversation(st.session_state.responses)
-    # Reset for the next conversation
-    st.session_state.responses.clear()
-    st.session_state.current_question_index = 0
+    if st.session_state.ready_to_finalize:
+        save_to_csv(st.session_state.responses)
+        recommendation = "Based on your interests, you might enjoy playing tennis with Juan."
+        st.write(f"Hello {st.session_state.responses.get('name', '')}, {recommendation}")
+        if st.button("Start Over"):
+            st.session_state.current_question_index = 0
+            st.session_state.responses = {}
+            st.session_state.ready_to_finalize = False
+            st.rerun()
 
-# Save conversation to a CSV file
-def save_conversation(responses):
-    new_row = {**responses, 'Recommendation': "Based on your interests, you might enjoy playing tennis with Juan.", 'Timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-    new_row_df = pd.DataFrame([new_row])
+def save_to_csv(responses):
+    # Ensure the order of responses matches your desired CSV format
+    ordered_keys = ['name', 'age', 'gender', 'nationality', 'major', 'languages', 'hobbies', 'Recommendation', 'Timestamp']
+    #responses['Recommendation'] = "Based on your interests, you might enjoy playing tennis with Juan."
+    #responses['Timestamp'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Convert responses to match the ordered keys
+    ordered_responses = {key: responses.get(key, '') for key in ordered_keys}
+    df = pd.DataFrame([ordered_responses], columns=ordered_keys)
     
     try:
-        data = pd.read_csv('chatbot_data.csv')
+        existing_data = pd.read_csv('chatbot_data.csv')
+        updated_data = pd.concat([existing_data, df], ignore_index=True)
     except FileNotFoundError:
-        data = pd.DataFrame(columns=new_row.keys())
-    
-    updated_data = pd.concat([data, new_row_df], ignore_index=True)
-    updated_data.to_csv('chatbot_data.csv', index=False)
+        updated_data = df
+
+    # Ensure no additional commas are saved
+    updated_data.to_csv('chatbot_data.csv', index=False, float_format='%.1f')
 
 st.title('HingE Chatbot')
 
-# Manage the flow of the conversation
-if 'ready_to_finalize' not in st.session_state or st.button("Start Over"):
-    st.session_state.ready_to_finalize = False
-    st.session_state.current_question_index = 0  # Reset to start from the first question
-
-if st.session_state.ready_to_finalize:
-    finalize_conversation()
-    st.session_state.ready_to_finalize = False  # Reset for a new conversation
+if not st.session_state.ready_to_finalize:
+    display_question()
 else:
-    display_current_question()
+    finalize_conversation()
