@@ -26,37 +26,31 @@ def display_question():
         question, key = questions[st.session_state.current_question_index]
         response = st.text_input(question, key=key)
         
-        if response:  # Ensuring response is captured before moving on
+        # Automatically capture the response for the current question
+        if response:
             st.session_state.responses[key] = response.strip()
-            # Move the condition check for the last question inside the if response block
-            if st.session_state.current_question_index < len(questions) - 1:
-                st.session_state.current_question_index += 1
-            else:
-                st.session_state.ready_to_finalize = True
-                # Call finalize_conversation directly if all questions are answered
-                finalize_conversation()
-                return  # Add a return statement to exit the function early
-            st.rerun()
-
+        
+        # Check if we are at the last question
+        if st.session_state.current_question_index == len(questions) - 1:
+            if st.button("Submit"):
+                if response:  # Make sure the last response is not empty
+                    finalize_conversation()
+                else:
+                    st.warning("Please answer the last question before submitting.")
+        elif response:  # For any question except the last, move to the next question on response
+            st.session_state.current_question_index += 1
+            st.experimental_rerun()
 
 def finalize_conversation():
-    if st.session_state.ready_to_finalize:
-        save_to_csv(st.session_state.responses)
-        recommendation = "Based on your interests, you might enjoy playing tennis with Juan."
-        st.write(f"Hello {st.session_state.responses.get('name', '')}, {recommendation}")
-        if st.button("Start Over"):
-            st.session_state.current_question_index = 0
-            st.session_state.responses = {}
-            st.session_state.ready_to_finalize = False
-            st.rerun()
+    save_to_csv(st.session_state.responses)
+    recommendation = "Based on your interests, you might enjoy playing tennis with Juan."
+    st.write(f"Hello {st.session_state.responses.get('name', '')}, {recommendation}")
+    st.success("Your responses have been saved!")
 
 def save_to_csv(responses):
-    # Ensure the order of responses matches your desired CSV format
     ordered_keys = ['name', 'age', 'gender', 'nationality', 'major', 'year', 'languages', 'hobbies', 'Recommendation', 'Timestamp']
     responses['Recommendation'] = "Based on your interests, you might enjoy playing tennis with Juan."
     responses['Timestamp'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    # Convert responses to match the ordered keys
     ordered_responses = {key: responses.get(key, '') for key in ordered_keys}
     df = pd.DataFrame([ordered_responses], columns=ordered_keys)
     
@@ -65,13 +59,9 @@ def save_to_csv(responses):
         updated_data = pd.concat([existing_data, df], ignore_index=True)
     except FileNotFoundError:
         updated_data = df
-
-    # Ensure no additional commas are saved
+    
     updated_data.to_csv('chatbot_data.csv', index=False, float_format='%.1f')
 
 st.title('HingE Chatbot')
 
-if not st.session_state.ready_to_finalize:
-    display_question()
-else:
-    finalize_conversation()
+display_question()
