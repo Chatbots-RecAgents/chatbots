@@ -47,6 +47,9 @@ def finalize_conversation():
     st.write(f"Hello {st.session_state.responses.get('name', '')}, {recommendation}")
     st.success("Your responses have been saved!")
 
+    # Remove the submit button and display the recommendation
+    st.session_state.ready_to_finalize = True
+
 def save_to_csv(responses):
     ordered_keys = ['name', 'age', 'gender', 'nationality', 'major', 'year', 'languages', 'hobbies', 'Recommendation', 'Timestamp']
     responses['Recommendation'] = "Based on your interests, you might enjoy playing tennis with Juan."
@@ -64,4 +67,5 @@ def save_to_csv(responses):
 
 st.title('HingE Chatbot')
 
-display_question()
+if not st.session_state.ready_to_finalize:
+    display_question()
