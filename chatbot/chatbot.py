@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+from cosine_sim import get_similar_profiles
 
 # Initialize or reset session state variables at the start
 if 'init' not in st.session_state:
@@ -43,7 +44,9 @@ def display_question():
 
 def finalize_conversation():
     save_to_csv(st.session_state.responses)
-    recommendation = "Based on your interests, you might enjoy playing tennis with Juan."
+    path = '/Users/marianareyes/Documents/GitHub/chatbots/chatbot/data.csv'
+    recommendation = get_similar_profiles(st.session_state.responses, path)
+    #recommendation = "Based on your interests, you might enjoy playing tennis with Juan."
     st.write(f"Hello {st.session_state.responses.get('name', '')}, {recommendation}")
     st.success("Your responses have been saved!")
 
