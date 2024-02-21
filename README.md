@@ -23,9 +23,9 @@
 ### Objectives
    Improve customer satisfaction
 ### KRs:
-   Making the webapp easily accessible through the internwt
-   Maintaining recommendation speed
-   Correctly processing data given to the chatbot(bot to csv, csv to reco, reco to bot)
+   * Making the webapp easily accessible through the internet
+   * Maintaining recommendation speed
+   * Correctly processing data given to the chatbot(bot to csv, csv to reco, reco to bot)
 
 
 ## Structure
