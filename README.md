@@ -21,7 +21,8 @@
 
 ## Objectives and Key Results
 ### Objectives
-   Improve customer satisfaction
+   * Improve customer satisfaction
+   * Facilitate communication and socialisation between users
 ### KRs:
    * Making the webapp easily accessible through the internet
    * Maintaining recommendation speed
