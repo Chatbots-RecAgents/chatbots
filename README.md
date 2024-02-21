@@ -17,21 +17,21 @@
 
 
 ## Dependencies
-  In this project, we will be using the huggingface for the chatbot, a recommendation engine, and a data processing tool
+  In this project, we will be using the streamlit for the chatbot, a recommendation engine using cosine similarity, and a data processing tool
 
 ## Objectives and Key Results
 ### Objectives
    Improve customer satisfaction
 ### KRs:
-   Making the webapp easily accessible
+   Making the webapp easily accessible through the internwt
    Maintaining recommendation speed
-   Correctly processing data given to the chatbot
+   Correctly processing data given to the chatbot(bot to csv, csv to reco, reco to bot)
 
 
 ## Structure
 * .github: CI/CD with GitHub Actions. It runs the tests every time there is a pull request to the repository, and everytime someone pushes their codes.
 * docs: Documentation of the project
-* tests: Python tests completed using PyTest
+* tests: Python tests completed using PyTest. One unit test alread is running, while testing the way the chatbot takes the data to the csv
 * xxxxxx
 
 ## Setup
@@ -39,15 +39,16 @@
 
 ## Code
 ### Chatbot creation
-  We will be using the huggingface to create a chatbot. The chatbot will ask the user questions, and save their answers into a csv file.
+  We will be using the streamlit and langchain to create a chatbot. The chatbot will ask the user questions, and save their answers into a csv file. The goal is to have the chatbot also give a natural reaction to all the answers given bh the users
 ### Data Processing
-  The data will be taken from the csv file, and will go through an EDA process. After the EDA process, it will be fed into a recommendation engine
+  The data will be taken from the csv file, and will go through an EDA process. After the EDA process, it will be fed into a recommendation engine. After that, the engine will send the user the recommendations
 ### Recommendation Engine
   Specifics on this model will be written later. After the data is fed into this model, the model will send the output back to the chatbot which will send it to the user.
   We are using KNN. More info will come later
 
-# Tests
-  The tests will be explained as we start the coding foundations
+# Test
+  Using pytest, we created a unit test for the save_to_csv function. This will test how this function enters the data into the csv file
+  More tests will come later
 
 ## For the chatbot:
 1. Install llama-cpp-python
