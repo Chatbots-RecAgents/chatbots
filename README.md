@@ -8,7 +8,7 @@
   - [Tests](#Tests)
 
 
-# Make friends
+# hIngE
 ### Product Vision Statement
   To make meeting people easier 
 
@@ -43,8 +43,7 @@
 ### Data Processing
   The data will be taken from the csv file, and will go through an EDA process. After the EDA process, it will be fed into a recommendation engine. After that, the engine will send the user the recommendations
 ### Recommendation Engine
-  Specifics on this model will be written later. After the data is fed into this model, the model will send the output back to the chatbot which will send it to the user.
-  We are using KNN. More info will come later
+  
 
 # Test
   Using pytest, we created a unit test for the save_to_csv function. This will test how this function enters the data into the csv file
