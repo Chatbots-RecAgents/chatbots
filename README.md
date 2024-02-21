@@ -43,7 +43,7 @@
 ### Data Processing
   The data will be taken from the csv file, and will go through an EDA process. After the EDA process, it will be fed into a recommendation engine. After that, the engine will send the user the recommendations
 ### Recommendation Engine
-  
+  Cosine similarity is a measure used to determine how similar two vectors are irrespective of their size. It calculates the cosine of the angle between the two vectors.
 
 # Test
   Using pytest, we created a unit test for the save_to_csv function. This will test how this function enters the data into the csv file
