@@ -1,3 +1,7 @@
+# hIngE
+### Product Vision Statement
+  To make meeting people easier 
+  
   - [Overview](#Overview)
   - [Dependencies](#Dependencies)
   - [Objectives](#Objectives)
@@ -8,9 +12,6 @@
   - [Tests](#Tests)
 
 
-# hIngE
-### Product Vision Statement
-  To make meeting people easier 
 
 ## Overview
   Eventually add picture of system architecture
