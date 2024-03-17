@@ -1,7 +1,14 @@
+import sys
+import os
+#sys.path.append("~/Desktop/ie_tower/chatbots-1")
+#sys.path.append(os.path.join(os.path.dirname(__file__), '..'))  # Add parent directory to Python path
+
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from cosine_sim import get_similar_profiles
+#from chatlib.models.lgbm import *
+#from chatlib.models.load_data import *
+from lgbm import *
 
 # Initialize or reset session state variables at the start
 if 'init' not in st.session_state:
@@ -45,9 +52,28 @@ def display_question():
 def finalize_conversation():
     save_to_csv(st.session_state.responses)
     path = '/Users/marianareyes/Documents/GitHub/chatbots/chatbot/data.csv'
-    recommendation = get_similar_profiles(st.session_state.responses, path)
-    #recommendation = "Based on your interests, you might enjoy playing tennis with Juan."
-    st.write(f"Hello {st.session_state.responses.get('name', '')}, {recommendation}")
+    df = load_data(path)
+    X, y = preprocess_data(df)
+    params = {
+        'boosting_type': 'gbdt',
+        'objective': 'multiclass',
+        'num_class': len(df['name_encoded'].unique()),  # Number of unique names/classes
+        'metric': 'multi_logloss',
+        'num_leaves': 31,
+        'learning_rate': 0.05,
+        'feature_fraction': 0.9
+    }
+    model = train_model(X, y, params)
+    # Get the index of the current profile
+    current_profile_index = len(df) - 1
+    similar_profiles =  find_similar_profiles(current_profile_index, df, X, model)
+    
+    # Convert the DataFrame to a readable format
+    recommendation_text = f"Hello {st.session_state.responses.get('name', '')}, here are your matches:\n"
+    for index, row in similar_profiles.iterrows():
+        recommendation_text += f"\nName: {row['name']}, Age: {row['age']}, Gender: {row['gender']}, Year: {row['year']}\n"
+
+    st.write(recommendation_text)
     st.success("Your responses have been saved!")
 
     # Remove the submit button and display the recommendation
