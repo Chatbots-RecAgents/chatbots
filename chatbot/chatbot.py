@@ -6,9 +6,8 @@ import os
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-#from chatlib.models.lgbm import *
-#from chatlib.models.load_data import *
-from lgbm import *
+from chatlib.models.lgbm import *
+from chatlib.models.load_data import *
 
 # Initialize or reset session state variables at the start
 if 'init' not in st.session_state:
