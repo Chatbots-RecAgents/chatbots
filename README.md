@@ -58,3 +58,6 @@
 4. Run streamlit (streamlit run main.py)
 
 Also make sure to work using a venv. 
+
+## Install library
+- Do: 'pip install .' in the root directory

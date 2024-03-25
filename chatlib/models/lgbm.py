@@ -2,7 +2,7 @@ import lightgbm as lgb
 import numpy as np
 from sklearn.metrics import roc_auc_score, log_loss
 from sklearn.metrics.pairwise import cosine_similarity
-from load_data import * #importing everything from the preprocessed data
+from chatlib.models.load_data import * #importing everything from the preprocessed data
 
 def train_model(X, y, params):
     lgb_dataset = lgb.Dataset(X, label=y)
