@@ -132,11 +132,16 @@ def main():
         st.session_state.conversation_history.append({'sender': 'bot', 'content': thank_you_message})
         st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {thank_you_message}</div></div>", unsafe_allow_html=True)
 
-        # Print the similar profiles information
-        similar_profiles_message = "Here are some similar profiles:"
+        # Print similar profiles
+        similar_profiles_message = "Here are your top 5 matches:"
         st.session_state.conversation_history.append({'sender': 'bot', 'content': similar_profiles_message})
         st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {similar_profiles_message}</div></div>", unsafe_allow_html=True)
-        st.write(similar_profiles)
+
+        for index, row in similar_profiles.iterrows():
+            profile_description = f"{index + 1}. {row['name']}: {row['age']} year old {row['gender'].lower()}, from {row['nationality']}. "
+            profile_description += f"Majoring in {row['major']}. Languages: {row['languages']}. Hobbies: {row['hobbies']}."
+            st.session_state.conversation_history.append({'sender': 'bot', 'content': profile_description})
+            st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {profile_description}</div></div>", unsafe_allow_html=True)
 
         # Reset the session state for a new conversation
         st.session_state.current_index = 0
