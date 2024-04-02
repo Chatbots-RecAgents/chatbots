@@ -1,6 +1,6 @@
 from chatbotgpt import AIChatbot
 from unittest.mock import patch
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 import unittest
 import pandas as pd
 import datetime
