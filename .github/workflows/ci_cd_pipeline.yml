@@ -31,7 +31,7 @@ jobs:
     - name: Test with Pytest
       run: |
         pip install pytest
-        pytest chatbots/chatbot/tests/
+        pytest
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         CREDENTIALS: ${{secrets.CREDENTIALS}} 
