@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import os
 from final_comment import generate_comment
+import sys
+from pathlib import Path
+
+# Add the parent directory to sys.path to allow imports from the sibling directory
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from chatlib.models.lgbm import *
 from chatlib.models.load_data import *
