@@ -3,7 +3,7 @@
   To make meeting people easier 
   
   - [Overview](#Overview)
-  - [What is this project about?](#What is this project about?)
+  - [What is this project about?](#Whatisthisprojectabout?)
   - [Objectives](#Objectives)
   - [Keyresults](#KRs)
   - [Structure](#Structure)
