@@ -1,4 +1,4 @@
-from chatbot import AIChatbot
+from final_comment import AIChatbot
 from unittest.mock import patch
 from unittest.mock import patch, MagicMock
 import unittest
