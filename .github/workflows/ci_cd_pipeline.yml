@@ -18,7 +18,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'  
+        python-version: '3.8'
 
     - name: Install Dependencies
       run: pip install -r chatbot/requirements.txt
@@ -28,10 +28,12 @@ jobs:
         pip install flake8
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-    - name: Test with Pytest
+    - name: Set up environment variables from secrets
       run: |
-        pip install pytest
-        pytest
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        CREDENTIALS: ${{secrets.CREDENTIALS}} 
+        echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+        echo "CREDENTIALS=${{ secrets.CREDENTIALS }}" >> $GITHUB_ENV
+
+    - name: Run tests with pytest
+      run: pytest
+      # No need to explicitly set the environment variables here,
+      # as they're globally set for the job in the previous step.
