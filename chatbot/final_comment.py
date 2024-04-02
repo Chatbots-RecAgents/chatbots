@@ -1,7 +1,7 @@
 import openai
 
 # Initialize the OpenAI API with your API key
-openai.api_key = 'api_key'
+openai.api_key = 'api.key'
 
 def generate_comment(previous_answer):
     """

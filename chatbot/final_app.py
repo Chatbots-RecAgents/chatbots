@@ -3,8 +3,11 @@ import pandas as pd
 import os
 from final_comment import generate_comment
 
+from chatlib.models.lgbm import *
+from chatlib.models.load_data import *
+
 # Path for the CSV file to store responses
-CSV_FILE_PATH = 'user_responses.csv'
+CSV_FILE_PATH = 'data.csv'
 
 # Define your questions and corresponding CSV column names
 questions_and_columns = [
@@ -106,10 +109,34 @@ def main():
         # Save the collected responses
         update_responses(responses_df, st.session_state.responses)
 
+        # Integrating the model
+        path = '/Users/marianareyes/Desktop/ie_tower/chatbots/chatbot/data.csv'
+        df = load_data(path)
+        X, y = preprocess_data(df)
+        params = {
+            'boosting_type': 'gbdt',
+            'objective': 'multiclass',
+            'num_class': len(df['name_encoded'].unique()),  # Number of unique names/classes
+            'metric': 'multi_logloss',
+            'num_leaves': 31,
+            'learning_rate': 0.05,
+            'feature_fraction': 0.9
+        }
+        model = train_model(X, y, params)
+        # Get the index of the current profile
+        current_profile_index = len(df) - 1
+        similar_profiles =  find_similar_profiles(current_profile_index, df, X, model)
+
         # Thank the user and add the final message to the conversation history
         thank_you_message = "Thank you for participating!"
         st.session_state.conversation_history.append({'sender': 'bot', 'content': thank_you_message})
         st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {thank_you_message}</div></div>", unsafe_allow_html=True)
+
+        # Print the similar profiles information
+        similar_profiles_message = "Here are some similar profiles:"
+        st.session_state.conversation_history.append({'sender': 'bot', 'content': similar_profiles_message})
+        st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {similar_profiles_message}</div></div>", unsafe_allow_html=True)
+        st.write(similar_profiles)
 
         # Reset the session state for a new conversation
         st.session_state.current_index = 0
