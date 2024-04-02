@@ -67,5 +67,4 @@ chat_display.markdown(chat_html, unsafe_allow_html=True)
 if st.session_state['all_answered']:
     if st.button('Recommend'):
         # Save the gathered information to a CSV file
-        save_user_info_to_csv(chatbot.user_info)
         st.write("User information saved. Recommendations will be shown here.")
