@@ -5,6 +5,9 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from firebase_chatbot import generate_comment
 
+from chatlib.models.load_data_fb import *
+from chatlib.models.lgbm_fb import *
+
 # Check if Firebase app has already been initialized
 if not firebase_admin._apps:
     # Initialize Firebase Admin SDK
@@ -31,7 +34,7 @@ questions_and_fields = {
 
 def update_responses(new_data):
     # Store the responses in Firestore
-    db.collection('user_responses').add(new_data)
+    db.collection('training_data').add(new_data)
 
 def main():
     st.title("Chatbot Survey")
@@ -110,11 +113,44 @@ def main():
         # Save the collected responses
         update_responses(st.session_state.responses)
 
+        # Load data from Firestore
+        data = load_data_from_firestore()
+
+        # Preprocess data
+        X, y = preprocess_data(data)
+
+        params = {
+            'boosting_type': 'gbdt',
+            'objective': 'multiclass',
+            'num_class': len(np.unique(y)),  # Number of unique names/classes
+            'metric': 'multi_logloss',
+            'num_leaves': 31,
+            'learning_rate': 0.05,
+            'feature_fraction': 0.9
+        }
+
+        model = train_model(X, y, params)
+
+        profile_index = len(X) - 1
+        similar_profiles = find_similar_profiles(profile_index, data, X, model)
+
         # Thank the user and add the final message to the conversation history
         thank_you_message = "Thank you for participating!"
         st.session_state.conversation_history.append({'sender': 'bot', 'content': thank_you_message})
         st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {thank_you_message}</div></div>", unsafe_allow_html=True)
 
+        # Print similar profiles message
+        similar_profiles_message = "Here are your top 5 matches:"
+        st.session_state.conversation_history.append({'sender': 'bot', 'content': similar_profiles_message})
+        st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {similar_profiles_message}</div></div>", unsafe_allow_html=True)
+
+        # Iterate over similar profiles and print profile descriptions
+        for idx, profile in enumerate(similar_profiles, start=1):
+            profile_description = f"{idx}. {profile['name']}: {profile['age']} year old {profile['gender'].lower()}, from {profile['nationality']}. "
+            profile_description += f"Majoring in {profile['major']}. Languages: {profile['languages']}. Hobbies: {profile['hobbies']}."
+            st.session_state.conversation_history.append({'sender': 'bot', 'content': profile_description})
+            st.markdown(f"<div class='message-container'><div class='message bot-message'>🤖: {profile_description}</div></div>", unsafe_allow_html=True)
+        
         # Reset the session state for a new conversation
         st.session_state.current_index = 0
         st.session_state.responses = {}
