@@ -3,13 +3,13 @@
   To make meeting people easier 
   
   - [Overview](#Overview)
-  - [What is this project about?](#Whatisthisprojectabout?)
+  - [About](#About)
   - [Objectives](#Objectives)
   - [Keyresults](#KRs)
   - [Structure](#Structure)
-  - [Setup](#Setup)
   - [CodeExplanation](#Code)
   - [Tests](#Tests)
+  - [Run](#Run)
 
 
 
@@ -18,7 +18,8 @@
 
 
 
-## What is this project about?
+## About
+What is this project about?
   First of all, the goal of our project is to connect people. Meeting new people can be a problem for a lot of people around the world, which is why we created this product. How does it work? The user starts by communicating with the chatbot. The goal of the chatbot is to humanise the process where the user enters their data. The user will type in their answers normally. After that, the data will be sent to a recommendation engine. The recommendation engine will take all the info the user gave to the chatbot, and recommend other users who share similarities to the user.
 
 
@@ -40,8 +41,6 @@
 * tests: Python tests completed using PyTest. 
 * Firebase: Hosting the databse on Firebase and using it as a general dataset for all users
 
-## Setup
-* Will revisit when we continue with the project
 
 ## Code
 ### Chatbot creation
@@ -59,7 +58,8 @@
   Using pytest, we created a unit test for the save_to_csv function. This will test how this function enters the data into the csv file
   More tests will come later
 
-## To run the hIngE:
+## Run:
+This will help you in running our project
 1. Do: 'pip install .' in the root directory to install all libraries
 2. Change directories into chatbot
 3. Run streamlit (streamlit run app.py)
