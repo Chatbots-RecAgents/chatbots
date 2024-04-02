@@ -1,7 +1,12 @@
 import openai
+import streamlit as st
+import os
+from chatbotgpt import AIChatbot
+# Fetch the OpenAI API key from the environment variables
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
-# Initialize the OpenAI API with your API key
-openai.api_key = 'api.key'
+# Initialize your AIChatbot with the fetched API key
+chatbot = AIChatbot(openai_api_key=openai_api_key)
 
 def generate_comment(previous_answer):
     """
