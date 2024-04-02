@@ -1,5 +1,7 @@
 from chatbot import AIChatbot
 from unittest.mock import patch
+# Import functional test dependencies
+import unittest
 
 # Simulate a complete interaction cycle with the chatbot
 @patch('openai.ChatCompletion.create')
@@ -48,6 +50,9 @@ def test_error_handling_and_recovery(mock_create):
     assert "Recovered response" in recovered_response
 
 
+
+if __name__ == '__main__':
+    unittest.main()
 
 
     
