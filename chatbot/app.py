@@ -1,9 +1,12 @@
 import streamlit as st
-from chatbot import AIChatbot
-from data_manager import save_user_info_to_csv
+import os
+from chatbotgpt import AIChatbot
 
-# Initialize the chatbot (ensure you've updated the chatbot logic as necessary)
-chatbot = AIChatbot(openai_api_key="api-key")
+# Fetch the OpenAI API key from the environment variables
+openai_api_key = os.getenv('OPENAI_API_KEY')
+
+# Initialize your AIChatbot with the fetched API key
+chatbot = AIChatbot(openai_api_key=openai_api_key)
 
 
 

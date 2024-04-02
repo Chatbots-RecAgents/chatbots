@@ -33,5 +33,5 @@ jobs:
         pip install pytest
         pytest
       env:
-        KEY: ${{ secrets.KEY }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         CREDENTIALS: ${{secrets.CREDENTIALS}} 
