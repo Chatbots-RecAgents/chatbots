@@ -32,4 +32,4 @@ jobs:
     - name: Test with Pytest
       run: |
         pip install pytest
-        pytest chatbot/tests
+        pytest 
