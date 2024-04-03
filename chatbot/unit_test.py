@@ -49,8 +49,8 @@ from chatlib.models.load_data_fb import load_data_from_firestore, preprocess_dat
 
 # Mock data returned from Firestore
 mock_firestore_data = [
-    {'name': 'Alice', 'age': '30', 'gender': 'Female', 'major': 'Computer Science', 'nationality': 'American', 'languages': 'English', 'hobbies': 'Reading'},
-    {'name': 'Bob', 'age': '22', 'gender': 'Male', 'major': 'Data Science', 'nationality': 'Canadian', 'languages': 'French', 'hobbies': 'Writing'},
+    {'name': 'Alice', 'age': '30', 'gender': 'Female', 'major': 'Computer Science', 'year':2, 'nationality': 'American', 'languages': 'English', 'hobbies': 'Reading'},
+    {'name': 'Bob', 'age': '22', 'gender': 'Male', 'major': 'Data Science', 'year': 3, 'nationality': 'Canadian', 'languages': 'French', 'hobbies': 'Writing'},
     # Add more mock documents as needed for comprehensive testing
 ]
 
