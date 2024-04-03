@@ -17,6 +17,10 @@ else:
     # Firebase app already initialized
     print("Firebase app already initialized.")
 
+
+def add_numbers(a, b):
+    return a + b
+
 # Initialize Firestore client
 db = firestore.client()
 
