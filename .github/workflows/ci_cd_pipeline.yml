@@ -11,8 +11,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    environment: env  # Specify your environment name here
-
     steps:
     - uses: actions/checkout@v2
 
@@ -33,6 +31,3 @@ jobs:
       run: |
         pip install pytest
         pytest chatbot/tests
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        CREDENTIALS: ${{ secrets.CREDENTIALS }}
