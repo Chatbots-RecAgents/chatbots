@@ -47,9 +47,26 @@ What is this project about?
   We will be using the streamlit and the openai API to create a chatbot. Our chatbot is limited: the questions we want to ask stay as they are. We create a list of these questions, and have our chatbot iterate through them. We utilise the openai API when the chatbot reacts to the user responses.
 
   To summarise: The chatbot asks questions to the user from the list. The user responds with info. The chatbot reacts to that info without asking any more questions. After the chatbot reaction, the next question from the list gets asked. This helps in humanising the process.  
-  
+
+### The Data 
+  The data used in creating the algorihtm is made up of the following fields:
+  1. Student's name (string)
+  2. Student's gender (string)
+  3. Age (number)
+  4. Year (number)
+  5. Major (string)
+  6. Nationality (string)
+  7. Languages spoken (string)
+  8. Hobbies (string)
+
 ### Data Processing
   The data will be taken from the csv file, and will go through an EDA process. After the EDA process, it will be fed into a recommendation engine. After that, the engine will send the user the recommendations
+
+### EDA
+  During the EDA process, the data goes several steps:
+  1. Removing Duplicate rows
+  2. Encoding categorical data (one-hot encoding for Gender and label encoding for the rest of the categorical variables)
+  3. Build the model using lightgbm. 
   
 ### Recommendation Engine
   Cosine similarity is a measure used to determine how similar two vectors are irrespective of their size. It calculates the cosine of the angle between the two vectors.
