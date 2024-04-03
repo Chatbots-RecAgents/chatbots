@@ -35,3 +35,62 @@ def test_train_model(sample_data):
     model = train_model(X, y, params)
     assert isinstance(model, lgb.basic.Booster)  # Ensure the model is a LightGBM Booster instance
     # Optionally, you can assert the model's performance on a held-out set or its structure
+
+
+
+
+####################
+
+
+
+import pytest
+from unittest.mock import patch, MagicMock
+from chatlib.models.load_data_fb import load_data_from_firestore, preprocess_data  # adjust the import path according to your project structure
+
+# Mock data returned from Firestore
+mock_firestore_data = [
+    {'name': 'Alice', 'age': '30', 'gender': 'Female', 'major': 'Computer Science', 'nationality': 'American', 'languages': 'English', 'hobbies': 'Reading'},
+    {'name': 'Bob', 'age': '22', 'gender': 'Male', 'major': 'Data Science', 'nationality': 'Canadian', 'languages': 'French', 'hobbies': 'Writing'},
+    # Add more mock documents as needed for comprehensive testing
+]
+
+# Mock for Firestore document
+class MockFirestoreDoc:
+    def to_dict(self):
+        pass
+
+@pytest.fixture
+def firestore_data():
+    # Return a list of mock documents, converting each mock data entry to a mock Firestore document
+    docs = []
+    for data in mock_firestore_data:
+        doc = MockFirestoreDoc()
+        doc.to_dict = MagicMock(return_value=data)
+        docs.append(doc)
+    return docs
+
+@patch('your_module.firestore.client')
+def test_load_data_from_firestore(mock_firestore_client, firestore_data):
+    # Setup mock
+    mock_collection = mock_firestore_client().collection()
+    mock_collection.get = MagicMock(return_value=firestore_data)
+
+    # Call function
+    data = load_data_from_firestore()
+
+    # Assert
+    assert len(data) == len(mock_firestore_data)
+    for returned, expected in zip(data, mock_firestore_data):
+        assert returned == expected
+
+def test_preprocess_data():
+    # Using mock_firestore_data as input
+    X, y = preprocess_data(mock_firestore_data)
+
+    # Perform various asserts
+    # Assert the shape of X and y matches expectations
+    # Assert specific processing results, like the correct encoding of categorical variables
+
+    assert X.shape[0] == len(mock_firestore_data)  # Number of rows
+    # Add more assertions as needed
+
