@@ -27,6 +27,14 @@ jobs:
         pip install flake8
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
+    - name: Print Workflow Name
+      run: |
+        echo Workflow Name: ${{ github.workflow }}
+      
     - name: Print Working Directory
       run: pwd
+      
+    - name: Print Workflow Directory
+      run: |
+        echo "Workflow File Directory: .github/workflows/"
       
