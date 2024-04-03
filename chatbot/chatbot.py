@@ -9,6 +9,9 @@ from datetime import datetime
 from chatlib.models.lgbm import *
 from chatlib.models.load_data import *
 
+def add_numbers(a, b):
+    return a + b
+
 # Initialize or reset session state variables at the start
 if 'init' not in st.session_state:
     st.session_state.responses = {}

@@ -1,4 +1,4 @@
-from chatbot.app2 import add_numbers
+from chatbot.chatbot import add_numbers
 
 def test_add_numbers():
     assert add_numbers(2, 3) == 5
