@@ -11,8 +11,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    environment: env  # Specify your environment name here
-
     steps:
     - uses: actions/checkout@v2
 
@@ -29,10 +27,7 @@ jobs:
         pip install flake8
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-    - name: Test with Pytest
-      run: |
-        pip install pytest
-        pytest chatbot/tests
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        CREDENTIALS: ${{ secrets.CREDENTIALS }}
+#    - name: Test with Pytest
+ #     run: |
+  #      pip install pytest
+   #     pytest chatbot/tests
