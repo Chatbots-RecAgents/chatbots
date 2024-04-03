@@ -59,8 +59,6 @@ What is this project about?
   7. Languages spoken (string)
   8. Hobbies (string)
 
-### Data Processing
-  The data will be taken from the csv file, and will go through an EDA process. After the EDA process, it will be fed into a recommendation engine. After that, the engine will send the user the recommendations
 
 ### EDA
   During the EDA process, the data goes several steps:
@@ -69,7 +67,7 @@ What is this project about?
   3. Build the model using lightgbm. 
   
 ### Recommendation Engine
-  Cosine similarity is a measure used to determine how similar two vectors are irrespective of their size. It calculates the cosine of the angle between the two vectors.
+  For the recommendation engine we decided to use a LightGBM model
 
 # Test
   Using pytest, we created a unit test for the save_to_csv function. This will test how this function enters the data into the csv file
