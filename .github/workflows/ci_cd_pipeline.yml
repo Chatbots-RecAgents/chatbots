@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - Testing
   pull_request:
     branches:
       - main
@@ -31,4 +30,4 @@ jobs:
     - name: Test with Pytest
       run: |
         pip install pytest
-        pytest 
+        pytest chatbot/uni_tests.py
