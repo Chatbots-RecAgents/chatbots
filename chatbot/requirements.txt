@@ -2,4 +2,3 @@ pandas==1.5.2
 streamlit==1.27.2
 lightgbm==3.2.1
 firebase_admin==4.5.0
-firebase_chatbot==0.1.0
