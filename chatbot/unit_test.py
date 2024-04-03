@@ -69,7 +69,7 @@ def firestore_data():
         docs.append(doc)
     return docs
 
-@patch('your_module.firestore.client')
+@patch('chatlib.models.load_data_fb.firestore.client')
 def test_load_data_from_firestore(mock_firestore_client, firestore_data):
     # Setup mock
     mock_collection = mock_firestore_client().collection()
