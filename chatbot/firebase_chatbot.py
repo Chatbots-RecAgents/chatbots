@@ -1,7 +1,10 @@
 import openai
+import os
 
+api_key = os.getenv("OPENAI_API_KEY")
 # Initialize the OpenAI API with your API key
-openai.api_key = 'api-key'
+openai.api_key = api_key
+print(api_key)
 
 def generate_comment(previous_answer):
     """
