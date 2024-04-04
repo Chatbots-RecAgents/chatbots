@@ -43,4 +43,11 @@ jobs:
       run: |
         echo '${{ secrets.CREDENTIALS }}' > chatbot/credentials.json
       shell: bash
+    
+    - name: Print OpenAI API Key
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        echo "OpenAI API Key: $OPENAI_API_KEY"
       
+        
