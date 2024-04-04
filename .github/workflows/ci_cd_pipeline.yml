@@ -37,12 +37,5 @@ jobs:
         MY_SECRET: ${{ secrets.OPENAI_API_KEY }}
       run: |
         echo "Using secret in script"
-        python my_script.py
-
-    - name: Create Secret File
-      env:
-        SECRETS_JSON: ${{ secrets.CREDENTIALS }}  # Assuming you've stored the JSON string as a secret in GitHub
-      run: |
-        echo "$SECRETS_JSON" > secrets.json
-        python my_script.py  # This script reads from secrets.json
+        python firebase_chatbot.py $MY_SECRET
       
