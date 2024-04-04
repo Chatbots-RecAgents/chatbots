@@ -34,10 +34,10 @@ jobs:
 
     - name: Use Secret
       env:
-        MY_SECRET: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         echo "Using secret in script"
-        python chatbot/firebase_chatbot.py $MY_SECRET
+        python chatbot/firebase_chatbot.py
 
     - name: Create JSON file from secret
       run: |
