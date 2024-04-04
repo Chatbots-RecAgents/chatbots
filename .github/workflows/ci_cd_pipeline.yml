@@ -41,6 +41,6 @@ jobs:
 
     - name: Create JSON file from secret
       run: |
-        echo '${{ secrets.CREDENTIALS }}' > credentials.json
+        echo '${{ secrets.CREDENTIALS }}' > chatbot/credentials.json
       shell: bash
       
