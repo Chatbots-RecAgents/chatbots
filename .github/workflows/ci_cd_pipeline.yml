@@ -38,4 +38,9 @@ jobs:
       run: |
         echo "Using secret in script"
         python chatbot/firebase_chatbot.py $MY_SECRET
+
+    - name: Create JSON file from secret
+      run: |
+        echo '${{ secrets.CREDENTIALS }}' > credentials.json
+      shell: bash
       
