@@ -5,6 +5,9 @@ import firebase_admin
 from firebase_admin import credentials, firestore, initialize_app, get_app, App
 from chatbot_comment import generate_comment
 
+from chatlib.models.surprise_funcs import *
+from chatlib.datasets.python_splitters import python_random_split
+
 def initialize_firebase():
     try:
         # Try to retrieve the default app, assuming it has already been initialized.
@@ -18,6 +21,28 @@ def initialize_firebase():
     db = firestore.client(app=firebase_app)
     
     return db
+
+def load_data_from_firestore():
+    """Load data from Firebase Firestore in the 'training_data' collection."""
+    # Initialize Firestore client
+    db = firestore.client()
+    
+    # Fetch data from the "training_data" collection
+    training_data_ref = db.collection('ratings')
+    docs = training_data_ref.get()
+    
+    # Extract required fields from documents
+    data = []
+    for doc in docs:
+        doc_data = doc.to_dict()
+        data.append({
+            'userID': doc_data.get('userID'),
+            'itemID': doc_data.get('itemID'),
+            'rating': doc_data.get('rating')
+        })
+    
+    # Create DataFrame from the extracted data
+    return pd.DataFrame(data)
 
 # Initialize Firebase and get Firestore client
 db = initialize_firebase()
@@ -135,6 +160,34 @@ def main():
             st.success("You've chosen not to save your profile. Thank you for your time!")
             reset_session_state()
 
+        #implent the model
+        # Load data from Firestore
+        data = load_data_from_firestore() #ratings collection
+        train, test = python_random_split(data, 0.75)
+        svd_model = train_model(train)
+        # Use the user's inputted userID for predictions
+        user_id_to_predict = st.session_state.user_id
+        if user_id_to_predict:
+            top_10_recommendations = generate_recommendations(user_id_to_predict, svd_model, train)
+            # Load items_id.csv into a DataFrame
+            items_df = pd.read_csv("/Users/marianareyes/Desktop/ie_tower/chatbots-2/chatbot/data_with_itemID.csv")
+            # Merge items_df with top_10_recommendations on 'itemID'
+            merged_df = pd.merge(top_10_recommendations, items_df, on='itemID', how='left')
+            st.write("Top 10 recommended items for user", user_id_to_predict)
+            st.write(merged_df)
+
+            # Construct the sentence for each row in the merged DataFrame
+            sentences = []
+            for index, row in merged_df.iterrows():
+                sentence = f"{row['name']}, a {row['age']} year old from {row['nationality']}, with itemID: {row['itemID']} is a match for you! Studies {row['major']} and pursues the following hobbies: {row['hobbies']}. Languages spoken: {row['languages']}. Predicted rating: {row['prediction']} \n"
+                sentences.append(sentence)
+
+            # Join the sentences into a single string and display
+            final_sentence = '\n'.join(sentences)
+            st.write(final_sentence)
+
+        else:
+            st.warning("Please provide your user_id to get recommendations.")
     if st.button("Start Over"):
         reset_session_state()
 
