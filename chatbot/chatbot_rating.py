@@ -23,26 +23,46 @@ def initialize_firebase():
     return db
 
 def load_data_from_firestore():
-    """Load data from Firebase Firestore in the 'training_data' collection."""
+    """Load data from Firebase Firestore."""
     # Initialize Firestore client
     db = firestore.client()
     
-    # Fetch data from the "training_data" collection
-    training_data_ref = db.collection('ratings')
-    docs = training_data_ref.get()
+    # Fetch data from the "ratings" collection
+    ratings_ref = db.collection('ratings').get()
     
     # Extract required fields from documents
-    data = []
-    for doc in docs:
+    ratings_data = []
+    for doc in ratings_ref:
         doc_data = doc.to_dict()
-        data.append({
+        ratings_data.append({
             'userID': doc_data.get('userID'),
             'itemID': doc_data.get('itemID'),
             'rating': doc_data.get('rating')
         })
+
+    # Fetch data from the "items" collection
+    items_ref = db.collection('training_data').get()
     
-    # Create DataFrame from the extracted data
-    return pd.DataFrame(data)
+    # Extract required fields from documents
+    items_data = []
+    for doc in items_ref:
+        doc_data = doc.to_dict()
+        items_data.append({
+            'itemID': doc.get('itemID'),
+            'name': doc_data.get('name'),
+            'age': doc_data.get('age'),
+            'nationality': doc_data.get('nationality'),
+            'major': doc_data.get('major'),
+            'hobbies': doc_data.get('hobbies'),
+            'languages': doc_data.get('languages')
+        })
+
+    # Create DataFrames from the extracted data
+    ratings_df = pd.DataFrame(ratings_data)
+    items_df = pd.DataFrame(items_data)
+
+    return ratings_df, items_df
+
 
 # Initialize Firebase and get Firestore client
 db = initialize_firebase()
@@ -162,15 +182,17 @@ def main():
 
         #implent the model
         # Load data from Firestore
-        data = load_data_from_firestore() #ratings collection
+        data, items_df = load_data_from_firestore() #loading ratings and trainingdata collections
+        st.write(items_df.head())
+
         train, test = python_random_split(data, 0.75)
         svd_model = train_model(train)
+
         # Use the user's inputted userID for predictions
         user_id_to_predict = st.session_state.user_id
         if user_id_to_predict:
             top_10_recommendations = generate_recommendations(user_id_to_predict, svd_model, train)
-            # Load items_id.csv into a DataFrame
-            items_df = pd.read_csv("/Users/marianareyes/Desktop/ie_tower/chatbots-2/chatbot/data_with_itemID.csv")
+            #top_10_recommendations['itemID'] = top_10_recommendations['itemID'].astype(str)
             # Merge items_df with top_10_recommendations on 'itemID'
             merged_df = pd.merge(top_10_recommendations, items_df, on='itemID', how='left')
             st.write("Top 10 recommended items for user", user_id_to_predict)
@@ -185,7 +207,6 @@ def main():
             # Join the sentences into a single string and display
             final_sentence = '\n'.join(sentences)
             st.write(final_sentence)
-
         else:
             st.warning("Please provide your user_id to get recommendations.")
     if st.button("Start Over"):
