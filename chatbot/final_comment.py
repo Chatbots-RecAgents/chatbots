@@ -5,7 +5,7 @@ from chatbotgpt import AIChatbot
 import sys
 
 # Assuming the API key is the first argument after the script name
-api_key = sys.argv[1]
+api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize your AIChatbot with the fetched API key
 chatbot = AIChatbot(openai_api_key=api_key)
