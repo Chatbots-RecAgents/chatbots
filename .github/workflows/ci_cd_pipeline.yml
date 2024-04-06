@@ -27,19 +27,21 @@ jobs:
           pip install flake8
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
+      # Test step for GitHub Secrets
+      - name: Check GitHub Secrets Access
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]
+          then
+            echo "OPENAI_API_KEY is not set."
+            exit 1
+          else
+            echo "OPENAI_API_KEY is set."
+          fi
+
       # Uncomment and use this to test with Pytest, if you need it
       #- name: Test with Pytest
       #  run: |
       #    pip install pytest
       #    pytest chatbot/tests
-
-      # If you want to deploy or run the streamlit app
-      - name: Run Streamlit App
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # If you have Firebase credentials secret, uncomment the next line
-          # FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
-        run: |
-          # If you have Firebase credentials JSON, uncomment and create a file from the secret
-          # echo "$FIREBASE_CREDENTIALS" > ./chatbot/credentials.json
-          streamlit run chatbot/app2.py
