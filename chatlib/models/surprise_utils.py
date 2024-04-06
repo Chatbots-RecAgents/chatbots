@@ -4,12 +4,12 @@
 import pandas as pd
 import numpy as np
 
-from utils.constants import (
+from chatlib.utils.constants import (
     DEFAULT_USER_COL,
     DEFAULT_ITEM_COL,
     DEFAULT_PREDICTION_COL,
 )
-from utils.general_utils import invert_dictionary
+from chatlib.utils.general_utils import invert_dictionary
 
 
 def surprise_trainset_to_df(
