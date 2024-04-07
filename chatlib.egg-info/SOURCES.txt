@@ -9,6 +9,8 @@ setup.py
 ./chatbot/final_comment.py
 ./chatbot/firebase_chatbot.py
 ./chatbot/test.py
+./chatbot/tests/__init__.py
+./chatbot/tests/unit_test.py
 ./chatlib/__init__.py
 ./chatlib/try.py
 ./chatlib/datasets/__init__.py
