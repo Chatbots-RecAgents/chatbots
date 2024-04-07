@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: chatlib
+Version: 0.0
+Requires-Python: >=3.6, <3.12
+Requires-Dist: numpy>=1.19
+Requires-Dist: pandas<2,>1.0.3
