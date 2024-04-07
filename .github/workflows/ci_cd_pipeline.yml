@@ -11,32 +11,30 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  
 
-      - name: Install Dependencies
-        run: pip install -r chatbot/requirements.txt
+    - name: Install Dependencies
+      run: pip install -r chatbot/requirements.txt
 
-      - name: Lint with Flake8
-        run: |
-          pip install flake8
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    - name: Lint with Flake8
+      run: |
+        pip install flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      # Uncomment and use this to test with Pytest, if you need it
-      #- name: Test with Pytest
-      #  run: |
-      #    pip install pytest
-      #    pytest chatbot/tests
-
-      - name: Run Streamlit App
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          # This will not work to run the Streamlit app interactively,
-          # but you can use it to verify the application starts without errors.
-          streamlit run chatbot/app2.py --server.headless true --server.enableCORS false
+    - name: Test with Pytest
+      run: |
+        pip install pytest
+        pytest 
+        
+    - name: Access OpenAI Key
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        echo "OpenAI Key is $OPENAI_KEY"
