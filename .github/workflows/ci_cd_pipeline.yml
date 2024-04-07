@@ -24,13 +24,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install openai streamlit
           pip install firebase-admin
-
-      - name: Execute Python script
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          export OPENAI_API_KEY=$OPENAI_API_KEY
-          python chatbot/chatbot_rating.py "Your input string for previous_answer"
       
       - name: test with pytest
         run: |
