@@ -63,6 +63,33 @@ def load_data_from_firestore():
 
     return ratings_df, items_df
 
+def model():
+    # Load data from Firestore
+    data, items_df = load_data_from_firestore() #loading ratings and trainingdata collections
+
+    train, test = python_random_split(data, 0.75)
+    svd_model = train_model(train)
+
+    # Use the user's inputted userID for predictions
+    user_id_to_predict = st.session_state.user_id
+    if user_id_to_predict:
+        top_10_recommendations = generate_recommendations(user_id_to_predict, svd_model, train)
+        # Merge items_df with top_10_recommendations on 'itemID'
+        merged_df = pd.merge(top_10_recommendations, items_df, on='itemID', how='left')
+        st.write("Top 10 recommended items for user", user_id_to_predict)
+        #st.write(merged_df)
+
+        # Construct the sentence for each row in the merged DataFrame
+        sentences = []
+        for index, row in merged_df.iterrows():
+            sentence = f"{row['name']}, a {row['age']} year old from {row['nationality']}, with itemID: {row['itemID']} is a match for you! Studies {row['major']} and pursues the following hobbies: {row['hobbies']}. Languages spoken: {row['languages']}. Predicted rating: {row['prediction']} \n"
+            sentences.append(sentence)
+
+        # Join the sentences into a single string and display
+        final_sentence = '\n'.join(sentences)
+        st.write(final_sentence)
+    else:
+        st.warning("Please provide your user_id to get recommendations.")
 
 # Initialize Firebase and get Firestore client
 db = initialize_firebase()
@@ -175,40 +202,14 @@ def main():
         if st.session_state.current_index == len(questions_and_fields) and st.session_state.responses.get("consent", "").lower() in ["yes", "y"]:
             update_responses(st.session_state.responses)
             st.success("Your responses have been saved. Thank you!")
+            model() #displaying recommendations after interacting with chatbot
             reset_session_state()
         elif st.session_state.current_index == len(questions_and_fields):
             st.success("You've chosen not to save your profile. Thank you for your time!")
+            model() #displaying recommendations after interacting with chatbot
             reset_session_state()
 
-        #implent the model
-        # Load data from Firestore
-        data, items_df = load_data_from_firestore() #loading ratings and trainingdata collections
-        st.write(items_df.head())
 
-        train, test = python_random_split(data, 0.75)
-        svd_model = train_model(train)
-
-        # Use the user's inputted userID for predictions
-        user_id_to_predict = st.session_state.user_id
-        if user_id_to_predict:
-            top_10_recommendations = generate_recommendations(user_id_to_predict, svd_model, train)
-            #top_10_recommendations['itemID'] = top_10_recommendations['itemID'].astype(str)
-            # Merge items_df with top_10_recommendations on 'itemID'
-            merged_df = pd.merge(top_10_recommendations, items_df, on='itemID', how='left')
-            st.write("Top 10 recommended items for user", user_id_to_predict)
-            st.write(merged_df)
-
-            # Construct the sentence for each row in the merged DataFrame
-            sentences = []
-            for index, row in merged_df.iterrows():
-                sentence = f"{row['name']}, a {row['age']} year old from {row['nationality']}, with itemID: {row['itemID']} is a match for you! Studies {row['major']} and pursues the following hobbies: {row['hobbies']}. Languages spoken: {row['languages']}. Predicted rating: {row['prediction']} \n"
-                sentences.append(sentence)
-
-            # Join the sentences into a single string and display
-            final_sentence = '\n'.join(sentences)
-            st.write(final_sentence)
-        else:
-            st.warning("Please provide your user_id to get recommendations.")
     if st.button("Start Over"):
         reset_session_state()
 
