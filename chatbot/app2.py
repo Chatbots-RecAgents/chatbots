@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import firebase_admin
 from firebase_admin import credentials, firestore
-from firebase_chatbot import generate_comment
+from chatbot.firebase_chatbot import generate_comment
 
 from chatlib.models.load_data_fb import *
 from chatlib.models.lgbm_fb import *
@@ -16,6 +16,8 @@ if not firebase_admin._apps:
 else:
     # Firebase app already initialized
     print("Firebase app already initialized.")
+
+
 
 # Initialize Firestore client
 db = firestore.client()
