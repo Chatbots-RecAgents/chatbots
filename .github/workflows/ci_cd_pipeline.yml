@@ -1,33 +1,35 @@
-name: Python Application CI
+name: CI_CD
 
+# Defines the event for which the action will run
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
+# Defines the jobs to be run
 jobs:
-  build-and-test:
+  run-script:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+      # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'  
+      # Sets up Python
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
 
-    - name: Install Dependencies
-      run: pip install -r chatbot/requirements.txt
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai
 
-    - name: Lint with Flake8
-      run: |
-        pip install flake8
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-    - name: Test with Pytest
-      run: |
-        pip install pytest
-        pytest 
+      # Run the Python script
+      - name: Execute Python script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          export OPENAI_API_KEY=$OPENAI_API_KEY
+          python chatbot_comment.py "Your input string for previous_answer"
