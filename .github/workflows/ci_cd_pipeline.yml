@@ -23,12 +23,15 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Install surprise
+        run: |
+          pip install --use-pep517 surprise
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install openai streamlit
           pip install firebase-admin
-          pip install --use-pep517 scikit-surprise
       
       - name: test with pytest
         run: |
