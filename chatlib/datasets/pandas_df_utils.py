@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from functools import lru_cache, wraps
 
-from utils.constants import (
+from chatlib.utils.constants import (
     DEFAULT_USER_COL,
     DEFAULT_ITEM_COL,
     DEFAULT_RATING_COL,

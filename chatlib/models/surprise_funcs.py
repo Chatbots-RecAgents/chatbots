@@ -1,7 +1,7 @@
 import surprise
 import pandas as pd
-from utils.timer import Timer
-from evaluation.python_evaluation import (
+from chatlib.utils.timer import Timer
+from chatlib.evaluation.python_evaluation import (
     rmse,
     mae,
     rsquared,

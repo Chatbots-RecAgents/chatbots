@@ -22,4 +22,5 @@ setup(
     package_dir={"": "."},
     python_requires=">=3.6, <3.12",
     packages=find_packages(where=".", exclude=["docs", "examples", "tests"]),
+    include_package_data=True,
 )
