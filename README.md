@@ -78,3 +78,7 @@ This will help you in running our project
 1. Do: 'pip install .' in the root directory to install all libraries
 2. Change directories into chatbot
 3. Run streamlit (streamlit run app.py)
+
+[chatbot_rating · Streamlit.pdf](https://github.com/Chatbots-RecAgents/chatbots/files/14933471/chatbot_rating.Streamlit.pdf)
+
+
