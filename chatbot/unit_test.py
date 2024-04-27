@@ -30,6 +30,7 @@ import pytest
 from unittest.mock import patch, MagicMock
 from chatlib.models.load_data_fb import load_data_from_firestore, preprocess_data  # adjust the import path according to your project structure
 
+# test
 # Mock data returned from Firestore
 mock_firestore_data = [
     {'name': 'Alice', 'age': '30', 'gender': 'Female', 'major': 'Computer Science', 'year':2, 'nationality': 'American', 'languages': 'English', 'hobbies': 'Reading'},
