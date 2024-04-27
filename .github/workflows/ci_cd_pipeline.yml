@@ -31,3 +31,7 @@ jobs:
         run: |
           export OPENAI_API_KEY=$OPENAI_API_KEY
           python chatbot/chatbot_rating.py "Your input string for previous_answer"
+      
+      - name: Test with pytest
+        run: |
+          pytest chatbot
