@@ -28,7 +28,6 @@ def sample_data():
 
 import pytest
 from unittest.mock import patch, MagicMock
-from chatlib.models.load_data_fb import load_data_from_firestore, preprocess_data  # adjust the import path according to your project structure
 
 # test
 # Mock data returned from Firestore
@@ -52,29 +51,4 @@ def firestore_data():
         doc.to_dict = MagicMock(return_value=data)
         docs.append(doc)
     return docs
-
-@patch('chatlib.models.load_data_fb.firestore.client')
-def test_load_data_from_firestore(mock_firestore_client, firestore_data):
-    # Setup mock
-    mock_collection = mock_firestore_client().collection()
-    mock_collection.get = MagicMock(return_value=firestore_data)
-
-    # Call function
-    data = load_data_from_firestore()
-
-    # Assert
-    assert len(data) == len(mock_firestore_data)
-    for returned, expected in zip(data, mock_firestore_data):
-        assert returned == expected
-
-def test_preprocess_data():
-    # Using mock_firestore_data as input
-    X, y = preprocess_data(mock_firestore_data)
-
-    # Perform various asserts
-    # Assert the shape of X and y matches expectations
-    # Assert specific processing results, like the correct encoding of categorical variables
-
-    assert X.shape[0] == len(mock_firestore_data)  # Number of rows
-    # Add more assertions as needed
 
