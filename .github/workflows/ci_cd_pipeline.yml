@@ -24,6 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install openai streamlit
           pip install pytest 
+          pip install sklearn
           pip install lightgbm
           pip install firebase-admin
 
