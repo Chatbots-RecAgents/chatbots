@@ -1,7 +1,6 @@
 from chatbot.test import add_numbers
 import numpy as np
 import pytest
-import lightgbm as lgb
 from sklearn.datasets import make_classification
 
 def test_add_numbers():
