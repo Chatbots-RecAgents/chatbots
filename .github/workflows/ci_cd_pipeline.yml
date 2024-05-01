@@ -37,4 +37,4 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           export OPENAI_API_KEY=$OPENAI_API_KEY
-          python chatbot/chatbot_rating.py "Your input string for previous_answer"
+          streamlit run chatbot_rating.py
