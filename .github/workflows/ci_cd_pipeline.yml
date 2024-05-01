@@ -31,10 +31,3 @@ jobs:
       - name: Test with pytest
         run: |
             pytest chatbot
-
-      - name: Execute Python script
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          export OPENAI_API_KEY=$OPENAI_API_KEY
-          streamlit run chatbot_rating.py
