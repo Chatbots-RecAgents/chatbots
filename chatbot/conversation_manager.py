@@ -13,6 +13,7 @@ class ConversationManager:
         self.model = self.build_model()
         self.conversation_history = []  # Store full conversation history
         self.current_question = None
+        self.current_question_index = 0
         self.questions = [
             "What is your body type?", "What is your diet?", "Do you drink alcohol?", 
             "Do you use drugs?", "What is your education level?", "What is your ethnicity?",
