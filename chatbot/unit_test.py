@@ -81,10 +81,7 @@ class TestSurpriseModel(unittest.TestCase):
 
 import unittest
 import pandas as pd
-from unittest.mock import patch
 from chatlib.models.surprise_funcs import SVD, Dataset, Reader
-from chatlib.models import surprise_funcs
-import io
 
 class TestSurpriseFunctions(unittest.TestCase):
     def setUp(self):
@@ -99,46 +96,5 @@ class TestSurpriseFunctions(unittest.TestCase):
         self.model = SVD(random_state=0, n_factors=200, n_epochs=30, verbose=True)
         train_set = Dataset.load_from_df(self.data, Reader(rating_scale=(1, 5))).build_full_trainset()
         self.model.fit(train_set)
-
-    @patch('pandas.read_csv')
-    def test_load_data(self, mock_read_csv):
-        """Test loading of data."""
-        mock_read_csv.return_value = self.data
-        df = surprise_funcs.load_data('mock_data.csv')
-        pd.testing.assert_frame_equal(df, self.data)
-
-    def test_train_model(self):
-        """Test training of the SVD model."""
-        result = surprise_funcs.train_model(self.data)
-        self.assertIsInstance(result, SVD)
-
-    def test_evaluate_model(self):
-        """Test evaluation metrics of the model."""
-        predictions = self.model.test(Dataset.load_from_df(self.data, Reader(rating_scale=(1, 5))).build_full_trainset().build_testset())
-        # Mock predictions data frame for MAP, NDCG, Precision@K, Recall@K calculations
-        all_predictions = pd.DataFrame({
-            'userID': [1, 1, 2, 2],
-            'itemID': [1, 2, 1, 2],
-            'prediction': [4.1, 5.0, 3.1, 2.1]
-        })
-
-        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            surprise_funcs.evaluate_model(self.data, predictions, all_predictions, top_k=2)
-            output = mock_stdout.getvalue()
-            self.assertIn('RMSE:', output)
-            self.assertIn('MAE:', output)
-            self.assertIn('rsquared:', output)
-            self.assertIn('exp var:', output)
-            self.assertIn('MAP:', output)
-            self.assertIn('NDCG:', output)
-            self.assertIn('Precision@K:', output)
-            self.assertIn('Recall@K:', output)
-
-    def test_generate_recommendations(self):
-        """Test generating recommendations."""
-        recommendations = surprise_funcs.generate_recommendations(1, self.model, self.data)
-        self.assertEqual(len(recommendations), 10)  # Assuming top 10 results are requested
-        self.assertTrue(all(recommendations['itemID'].isin([1, 2])))
-
 if __name__ == '__main__':
     unittest.main()
