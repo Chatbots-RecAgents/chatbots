@@ -1,6 +1,5 @@
 import unittest
-from chatlib import surprise
-from surprise import SVD, Dataset, Reader
+from chatlib.surprise import SVD, Dataset, Reader
 import pandas as pd
 from chatlib.datasets.python_splitters import python_random_split, predict, compute_ranking_predictions
 from chatlib.evaluation.python_evaluation import rmse, mae, rsquared, exp_var
