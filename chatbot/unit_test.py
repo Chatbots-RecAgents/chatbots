@@ -1,6 +1,6 @@
 import unittest
-from numpy import *
 import pandas as pd
+import numpy as np  # Ensure numpy is imported
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.models import Sequential
 import os
