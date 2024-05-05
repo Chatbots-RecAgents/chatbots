@@ -13,18 +13,18 @@ class ConversationManager:
         self.model = self.build_model()
         self.tokenizer = Tokenizer(num_words=10000)
         self.max_length = 20
-        self.keys = ["body_type", "diet", "drinks", "drugs", "education", "ethnicity", "height", "income", 
-                     "job", "offspring", "orientation", "pets", "religion", "sex", "sign", "smokes", 
-                     "speaks", "status"]
+        self.keys = ["age", "body_type", "diet", "drinks", "drugs", "education", 
+                     "ethnicity", "height", "income", "job", "last_online", "location", "offspring", "orientation", "pets", 
+                     "religion", "sex", "sign", "smokes", "speaks", "status"]
         self.current_entry = {key: None for key in self.keys}
         self.conversation_history = []
         self.current_question = None
         self.current_question_index = 0
         self.questions = [
-            "What is your body type?", "What is your diet?", "Do you drink alcohol?", 
+            "How old are you?", "What is your body type?", "What is your diet?", "Do you drink alcohol?", 
             "Do you use drugs?", "What is your education level?", "What is your ethnicity?",
-            "What is your height?", "What is your income?", "What is your job?", 
-            "Do you have offspring?", "What is your sexual orientation?", "Do you have pets?",
+            "What is your height?", "What is your income?", "What is your job?", "When were you last online?", 
+            "Where do you live?", "Do you have offspring?", "What is your sexual orientation?", "Do you have pets?",
             "What is your religion?", "What is your sex?", "What is your zodiac sign?",
             "Do you smoke?", "What languages do you speak?", "What is your marital status?"
         ]
@@ -67,9 +67,7 @@ class ConversationManager:
         self.update_conversation_history(user_input)
         sentiment = self.analyze_input_with_gru(user_input)
 
-        fun_fact = "Remember, balance is key in everything!"
-        prompt = f"The user was asked about their '{self.current_question}' and answered '{user_input}'. Given this response indicates a '{sentiment}' sentiment, can you provide a fun and engaging comment or advice related to their answer? For example, {fun_fact}"
-
+        prompt = f"The user was asked about their '{self.current_question}' and answered '{user_input}'. Given this response indicates a '{sentiment}' sentiment, can you provide a fun and engaging comment or advice related to their answer?"
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "system", "content": prompt}],
@@ -79,19 +77,19 @@ class ConversationManager:
         return generated_response
 
     def save_conversation_to_csv(self):
-        if self.conversation_history:
-            df = pd.DataFrame(self.conversation_history, columns=self.keys)  # Specify columns to ensure correct order
-            csv_file = 'conversation_history.csv'
-            if not os.path.exists(csv_file):
-                df.to_csv(csv_file, mode='w', header=True, index=False)
-            else:
-                df.to_csv(csv_file, mode='a', header=False, index=False)
-            print("Conversation history saved to CSV.")
+            if self.conversation_history:
+                df = pd.DataFrame(self.conversation_history, columns=self.keys)  # Specify columns to ensure correct order
+                csv_file = 'conversation_history.csv'
+                if not os.path.exists(csv_file):
+                    df.to_csv(csv_file, mode='w', header=True, index=False)
+                else:
+                    df.to_csv(csv_file, mode='a', header=False, index=False)
+                print("Conversation history saved to CSV.")
 
     def save_to_json(self):
         if self.current_entry:
             with open('current_user_data.json', 'w') as json_file:
-                json.dump(self.current_entry, json_file)
+                json.dump(self.current_entry, json_file, indent=4)
             print("Current user data saved to JSON.")
 
 if __name__ == "__main__":

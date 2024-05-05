@@ -1,5 +1,8 @@
 import streamlit as st
 from conversation_manager import ConversationManager
+from lgbm_funcs import *
+import os
+import json
 
 def apply_custom_css():
     css = """
@@ -46,8 +49,44 @@ def main():
                 st.session_state.current_question_index = 0  
 
     for chat in st.session_state.conversation:
-        st.markdown(f"<div class='chat-bubble user-bubble'>{chat['user']}</div>", unsafe_allow_html=True)
-        st.markdown(f"<div class='chat-bubble bot-bubble'>{chat['bot']}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='chat-bubble user-bubble'>{chat['user']}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='chat-bubble bot-bubble'>{chat['bot']}</div>", unsafe_allow_html=True)
+        
+    if st.session_state.current_question_index == 0 and st.session_state.conversation:
+        # Recommendation part
+        path = "/Users/sanabarakat/Desktop/year 3/semester 2/chatbots/chatbots/chatlib/models/profiles.csv"
+
+        df_preprocessed = preprocess_df(path)
+
+        # Load the profile from JSON, assuming it has been saved correctly.
+        if os.path.exists('current_user_data.json'):
+            with open('current_user_data.json', 'r') as json_file:
+                given_profile = json.load(json_file)
+
+            #Computing the ratings
+            rated_df = ratings_prediction(given_profile, df_preprocessed)
+
+            #Preprocessing dataset for lgbm
+            preprocessed_lgbm = preprocess_lgbm(path, rated_df)
+
+            #training lgbm
+            lgb_model, ord_encoder = training_lgbm(preprocessed_lgbm)
+
+            # Getting recommendations
+            recommendations = generate_lightGBM_recommendations(preprocessed_lgbm, lgb_model, ord_encoder, 10)
+            recommendations_data = []
+            for index, (profile_index, prediction) in enumerate(recommendations, start=1):
+                profile_info = preprocessed_lgbm.loc[profile_index]  # Get profile information from the preprocessed dataframe
+                profile_message = f"Recommendation {index}: \n"
+                profile_message += f"Profile index: {profile_index}: A {profile_info['age']} year old {profile_info['ethnicity']} "
+                profile_message += f"{ 'male' if profile_info['sex'] == 'm' else 'female' } who is {profile_info['status']}, "
+                profile_message += f"located in {profile_info['location']}."
+                recommendations_data.append((profile_message, f"You would rate this profile as: {prediction}"))
+            
+            st.write("Top 10 recommendations:")
+            for rec in recommendations_data:
+                st.write(rec[0])
+                st.write(rec[1])
 
 if __name__ == "__main__":
     main()

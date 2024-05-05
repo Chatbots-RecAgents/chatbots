@@ -12,7 +12,7 @@ version = version_data.get("__version__", "0.0")
 install_requires = [
     "numpy>=1.19",
     "pandas>1.0.3,<2",
-    # Add the rest of the dependencies later (check with the team)
+    # Ensure to add any other necessary dependencies here
 ]
 
 setup(
@@ -20,7 +20,7 @@ setup(
     version=version,
     install_requires=install_requires,
     package_dir={"": "."},
-    python_requires=">=3.6, <3.12",
+    python_requires=">=3.6, <=3.9.6",  # This specifies that Python 3.9.6 is the maximum version
     packages=find_packages(where=".", exclude=["docs", "examples", "tests"]),
     include_package_data=True,
 )

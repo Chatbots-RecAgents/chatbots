@@ -1,1 +1,23 @@
-{"body_type": "skinny", "diet": "normal", "drinks": "no", "drugs": "no", "education": "bachelor", "ethnicity": "white", "height": "165", "income": "100000", "job": "student", "offspring": "no", "orientation": "straight", "pets": "no", "religion": "islam", "sex": "female", "sign": "capricorn", "smokes": "no", "speaks": "french, spanish", "status": "single"}
+{
+    "age": "30",
+    "body_type": "fat",
+    "diet": "kosher",
+    "drinks": "no",
+    "drugs": "yes",
+    "education": "masters",
+    "ethnicity": "180",
+    "height": "180",
+    "income": "100000",
+    "job": "ceo",
+    "last_online": "3/4/2024",
+    "location": "california, usa",
+    "offspring": "no",
+    "orientation": "straight",
+    "pets": "no",
+    "religion": "islam",
+    "sex": "female",
+    "sign": "capricorn",
+    "smokes": "yes",
+    "speaks": "arabic, german",
+    "status": "single"
+}
