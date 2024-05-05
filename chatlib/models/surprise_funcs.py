@@ -1,4 +1,4 @@
-import surprise
+from chatlib.surprise import surprise
 import pandas as pd
 from chatlib.utils.timer import Timer
 from chatlib.evaluation.python_evaluation import (
