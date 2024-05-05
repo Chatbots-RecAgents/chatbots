@@ -54,10 +54,17 @@ class TestConversationManager(unittest.TestCase):
         csv_file = 'conversation_history.csv'
         if os.path.exists(csv_file):
             os.remove(csv_file)
-        self.cm.conversation_history = [{'test': 'data'}]
+        
+        # Update the conversation history with the correct keys
+        self.cm.conversation_history = [{key: 'test data' for key in self.cm.keys}]
         self.cm.save_conversation_to_csv()
+        
         df = pd.read_csv(csv_file)
-        self.assertEqual(df.to_dict(orient='records')[0], {'test': 'data'})
+        
+        # Creating an expected dictionary with all keys set to 'test data'
+        expected_data = {key: 'test data' for key in self.cm.keys}
+        self.assertDictEqual(df.to_dict(orient='records')[0], expected_data)
+
 
 # Adding existing tests for comparison with your data and model testing
 class TestSurpriseModel(unittest.TestCase):
