@@ -15,7 +15,7 @@ def test_add_numbers():
 
 
 import unittest
-from your_module import ConversationManager  # Ensure your class is imported correctly
+from conversation_manager import ConversationManager  # Ensure your class is imported correctly
 
 class TestConversationManager(unittest.TestCase):
     def setUp(self):
