@@ -5,6 +5,7 @@ import json
 import os
 import json
 from unittest.mock import patch, MagicMock, mock_open
+from tensorflow.keras.layers import Embedding, GRU, Dense 
 
 # Existing tests from your file
 from chatbot.test import add_numbers  # Adjust import according to your actual structure
