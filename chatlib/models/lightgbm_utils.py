@@ -5,6 +5,7 @@ import logging
 import numpy as np
 from tqdm import tqdm
 import collections
+import category_encoders as ce
 import gc
 
 
