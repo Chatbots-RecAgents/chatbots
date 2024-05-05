@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install numpy pytest lightgbm scikit-learn firebase-admin openai streamlit tensorflow
+          pip install numpy pytest lightgbm scikit-learn firebase-admin openai streamlit tensorflow category_encoders
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=${{ github.workspace }}/chatbots" >> $GITHUB_ENV
