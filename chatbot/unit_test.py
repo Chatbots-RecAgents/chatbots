@@ -5,6 +5,8 @@ import json
 import os
 import json
 from unittest.mock import patch, MagicMock, mock_open
+# Pip install Install tensorflow if not already installed
+!pip install tensorflow
 from tensorflow.keras.layers import Embedding, GRU, Dense 
 
 # Existing tests from your file
