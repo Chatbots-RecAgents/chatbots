@@ -95,8 +95,13 @@ def main():
         recommendations = generate_lightGBM_recommendations(preprocessed_lgbm, lgb_model, ord_encoder, 10)
         print("Top 10 recommendations:")
         for index, (profile_index, prediction) in enumerate(recommendations, start=1):
-            print(f"Recommendation {index}:")
-            print(f"Profile Index: {profile_index}, Prediction: {prediction}")
+            profile_info = preprocessed_lgbm.loc[profile_index]  # Get profile information from the preprocessed dataframe
+            profile_message = f"Recommendation {index}: \n"
+            profile_message += f"Profile index: {profile_index}: A {profile_info['age']} year old {profile_info['ethnicity']} "
+            profile_message += f"{ 'male' if profile_info['sex'] == 'm' else 'female' } who is {profile_info['status']}, "
+            profile_message += f"located in {profile_info['location']}."
+            print(profile_message)
+            print(f"You would rate this profile as: {prediction}\n")
 
 if __name__ == "__main__":
     main()
