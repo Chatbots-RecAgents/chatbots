@@ -78,23 +78,3 @@ class TestSurpriseModel(unittest.TestCase):
 
     def test_data_split(self):
         self.assertAlmostEqual(len(self.train) / len(self.data), 0.75, delta=0.1)
-
-import unittest
-import pandas as pd
-from chatlib.models.surprise_funcs import SVD, Dataset, Reader
-
-class TestSurpriseFunctions(unittest.TestCase):
-    def setUp(self):
-        # Setup mock data
-        self.data = pd.DataFrame({
-            'userID': [1, 1, 2, 2],
-            'itemID': [1, 2, 1, 2],
-            'rating': [4, 5, 3, 2]
-        })
-        self.data.to_csv('mock_data.csv', index=False)
-
-        self.model = SVD(random_state=0, n_factors=200, n_epochs=30, verbose=True)
-        train_set = Dataset.load_from_df(self.data, Reader(rating_scale=(1, 5))).build_full_trainset()
-        self.model.fit(train_set)
-if __name__ == '__main__':
-    unittest.main()
