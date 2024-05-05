@@ -1,6 +1,6 @@
 import streamlit as st
 from conversation_manager import ConversationManager
-from chatlib.models.lgbm_funcs import *
+from lgbm_funcs import *
 
 def apply_custom_css():
     css = """
@@ -52,35 +52,13 @@ def main():
     
     #Implement model here
     if st.session_state.conversation:
-        path = "/Users/marianareyes/Desktop/ie_tower/final_chatbots/chatlib/datasets/profiles.csv"
+        path = "/Users/sanabarakat/Desktop/year 3/semester 2/chatbots/chatbots/chatlib/models/profiles.csv"
 
         df_preprocessed = preprocess_df(path)
 
         #Defining profile
         #TODO: Replace by the one saved in current_user_data.json
-        given_profile = {
-            'age': 26,
-            'body_type': 'curvy',
-            'diet': 'mostly anything',
-            'drinks': 'socially',
-            'drugs': 'never',
-            'education': 'working on college/university',
-            'ethnicity': 'hispanic / latin, white',
-            'height': 63.0,
-            'income': 20000,
-            'job': 'sales / marketing / biz dev',
-            'last_online': '2012-06-23-23-10',
-            'location': 'berkeley, california',
-            'offspring': 'doesn’t have kids, but might want them',
-            'orientation': 'gay',
-            'pets': 'likes dogs and likes cats',
-            'religion': 'catholicism and laughing about it',
-            'sex': 'f',
-            'sign': 'gemini and it’s fun to think about',
-            'smokes': 'no',
-            'speaks': 'english',
-            'status': 'single'
-        }
+        given_profile = pd.read_json('current_user_data.json', typ='series')
 
         #Computing the ratings
         rated_df = ratings_prediction(given_profile, df_preprocessed)
