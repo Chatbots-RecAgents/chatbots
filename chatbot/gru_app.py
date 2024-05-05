@@ -1,5 +1,6 @@
 import streamlit as st
 from conversation_manager import ConversationManager
+from chatlib.models.lgbm_funcs import *
 
 def apply_custom_css():
     css = """
@@ -48,6 +49,54 @@ def main():
     for chat in st.session_state.conversation:
         st.markdown(f"<div class='chat-bubble user-bubble'>{chat['user']}</div>", unsafe_allow_html=True)
         st.markdown(f"<div class='chat-bubble bot-bubble'>{chat['bot']}</div>", unsafe_allow_html=True)
+    
+    #Implement model here
+    if st.session_state.conversation:
+        path = "/Users/marianareyes/Desktop/ie_tower/final_chatbots/chatlib/datasets/profiles.csv"
+
+        df_preprocessed = preprocess_df(path)
+
+        #Defining profile
+        #TODO: Replace by the one saved in current_user_data.json
+        given_profile = {
+            'age': 26,
+            'body_type': 'curvy',
+            'diet': 'mostly anything',
+            'drinks': 'socially',
+            'drugs': 'never',
+            'education': 'working on college/university',
+            'ethnicity': 'hispanic / latin, white',
+            'height': 63.0,
+            'income': 20000,
+            'job': 'sales / marketing / biz dev',
+            'last_online': '2012-06-23-23-10',
+            'location': 'berkeley, california',
+            'offspring': 'doesn’t have kids, but might want them',
+            'orientation': 'gay',
+            'pets': 'likes dogs and likes cats',
+            'religion': 'catholicism and laughing about it',
+            'sex': 'f',
+            'sign': 'gemini and it’s fun to think about',
+            'smokes': 'no',
+            'speaks': 'english',
+            'status': 'single'
+        }
+
+        #Computing the ratings
+        rated_df = ratings_prediction(given_profile, df_preprocessed)
+
+        #Preprocessing dataset for lgbm
+        preprocessed_lgbm = preprocess_lgbm(path, rated_df)
+
+        #training lgbm
+        lgb_model, ord_encoder = training_lgbm(preprocessed_lgbm)
+
+        #Getting recommendations
+        recommendations = generate_lightGBM_recommendations(preprocessed_lgbm, lgb_model, ord_encoder, 10)
+        print("Top 10 recommendations:")
+        for index, (profile_index, prediction) in enumerate(recommendations, start=1):
+            print(f"Recommendation {index}:")
+            print(f"Profile Index: {profile_index}, Prediction: {prediction}")
 
 if __name__ == "__main__":
     main()
