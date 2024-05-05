@@ -9,7 +9,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 class ConversationManager:
     def __init__(self):
-        openai.api_key = "api_key_here"
+        openai.api_key = "api_key"
         self.model = self.build_model()
         self.tokenizer = Tokenizer(num_words=10000)
         self.max_length = 20

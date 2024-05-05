@@ -58,9 +58,9 @@ def main():
 
         df_preprocessed = preprocess_df(path)
 
-        # Load the profile from JSON, assuming it has been saved correctly.
-        if os.path.exists('current_user_data.json'):
-            with open('current_user_data.json', 'r') as json_file:
+        json_path = 'current_user_data.json'
+        if os.path.exists(json_path):
+            with open(json_path, 'r') as json_file:
                 given_profile = json.load(json_file)
 
             #Computing the ratings
@@ -81,8 +81,8 @@ def main():
                 profile_message += f"Profile index: {profile_index}: A {profile_info['age']} year old {profile_info['ethnicity']} "
                 profile_message += f"{ 'male' if profile_info['sex'] == 'm' else 'female' } who is {profile_info['status']}, "
                 profile_message += f"located in {profile_info['location']}."
-                recommendations_data.append((profile_message, f"You would rate this profile as: {prediction}"))
-            
+                rounded_prediction = round(prediction, 4)  # Round the prediction to 4 decimal places
+                recommendations_data.append((profile_message, f"You would rate this profile as: {rounded_prediction}"))            
             st.write("Top 10 recommendations:")
             for rec in recommendations_data:
                 st.write(rec[0])
