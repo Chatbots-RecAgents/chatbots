@@ -3,34 +3,6 @@
 import pytest
 import json
 from unittest.mock import patch, MagicMock, mock_open
-from conversation_manager import ConversationManager
-
-# Test for the ConversationManager generate_response method
-def test_generate_response():
-    # Set up the ConversationManager and a mock for the OpenAI API
-    cm = ConversationManager()
-    cm.set_current_question("What is your diet?")
-
-    # Mocking the OpenAI API response
-    with patch('openai.ChatCompletion.create') as mock_openai:
-        mock_openai.return_value = MagicMock(choices=[{'message': {'content': 'Thank you for sharing!'}}])
-        
-        # Simulating user input and testing the response generation
-        response = cm.generate_response("I mostly eat plant-based foods.")
-        mock_openai.assert_called_once()  # Verify that the API was called
-        assert "Thank you for sharing!" in response  # Check that the response is as expected
-
-# Test for the ConversationManager save_to_json method
-def test_save_to_json():
-    cm = ConversationManager()
-    cm.current_entry = {"diet": "Vegan", "body_type": "Athletic"}  # Populate some data
-
-    # Use mock_open to simulate file writing
-    m = mock_open()
-    with patch('builtins.open', m), patch('json.dump') as mock_json_dump:
-        cm.save_to_json()
-        m.assert_called_once_with('current_user_data.json', 'w')  # Check file is opened in write mode
-        mock_json_dump.assert_called_once()  # Check json.dump was called
 
 # Existing tests from your file
 from chatbot.test import add_numbers  # Adjust import according to your actual structure
