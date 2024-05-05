@@ -15,7 +15,7 @@ def test_add_numbers():
 
 
 import unittest
-from conversation_manager import ConversationManager  # Adjust the import path if necessary
+from .conversation_manager import ConversationManager  # Adjust the import path if necessary
 
 class TestConversationManager(unittest.TestCase):
     def setUp(self):
