@@ -1,7 +1,6 @@
 import unittest
 import pandas as pd
-from chatlib.datasets.python_splitters import python_random_split, predict, compute_ranking_predictions
-from chatlib.evaluation.python_evaluation import rmse, mae, rsquared, exp_var
+from chatlib.datasets.python_splitters import python_random_split
 
 class TestSurpriseModel(unittest.TestCase):
 
