@@ -2,6 +2,8 @@
 
 import pytest
 import json
+import os
+import json
 from unittest.mock import patch, MagicMock, mock_open
 
 # Existing tests from your file
@@ -11,32 +13,48 @@ def test_add_numbers():
     assert add_numbers(-1, 1) == 0
     assert add_numbers(-1, -1) == -2
 
-# Fixture to simulate dataset
-@pytest.fixture
-def sample_data():
-    from sklearn.datasets import make_classification
-    X, y = make_classification(n_samples=100, n_features=4, n_informative=2, n_redundant=2, random_state=42)
-    data = [{"profile_data": "data" + str(i)} for i in range(X.shape[0])]
-    params = {
-        'boosting_type': 'gbdt',
-        'objective': 'binary',
-        'metric': 'binary_logloss',
-    }
-    return X, y, data, params
 
-# Test for Firestore mock data
-@pytest.fixture
-def firestore_data():
-    mock_firestore_data = [
-        {'name': 'Alice', 'age': '30', 'gender': 'Female', 'major': 'Computer Science', 'year':2, 'nationality': 'American', 'languages': 'English', 'hobbies': 'Reading'},
-        {'name': 'Bob', 'age': '22', 'gender': 'Male', 'major': 'Data Science', 'year': 3, 'nationality': 'Canadian', 'languages': 'French', 'hobbies': 'Writing'},
-    ]
-    docs = []
-    for data in mock_firestore_data:
-        doc = MagicMock()
-        doc.to_dict = MagicMock(return_value=data)
-        docs.append(doc)
-    return docs
+import unittest
+from your_module import ConversationManager  # Ensure your class is imported correctly
+
+class TestConversationManager(unittest.TestCase):
+    def setUp(self):
+        """Setup for test methods."""
+        self.cm = ConversationManager()
+    def test_build_model(self):
+        model = self.cm.build_model()
+        self.assertEqual(len(model.layers), 5)
+        self.assertIsInstance(model.get_layer('embedding_layer'), Embedding)
+        self.assertIsInstance(model.get_layer('gru_layer2'), GRU)
+        self.assertIsInstance(model.get_layer('output_layer'), Dense)
+    def test_analyze_input_with_gru(self):
+        # Assuming that tokenizer and model are properly initialized and can handle the input "hello world"
+        sentiment = self.cm.analyze_input_with_gru("hello world")
+        self.assertIn(sentiment, ['positive', 'negative'])  # Ensuring it returns one of the expected sentiments
+    def test_update_conversation_history(self):
+        self.cm.set_current_question("What is your height?")
+        self.cm.update_conversation_history("6 feet")
+        self.assertEqual(self.cm.current_entry['height'], "6 feet")
+        self.assertEqual(self.cm.current_question_index, 1)
+
+    def test_save_to_json(self):
+        self.cm.current_entry = {'height': '6 feet'}
+        self.cm.save_to_json()
+        with open('current_user_data.json', 'r') as file:
+            data = json.load(file)
+        self.assertEqual(data['height'], '6 feet')
+        os.remove('current_user_data.json')  # Clean up after test
+    from unittest.mock import patch
+
+    def test_generate_response(self):
+        with patch('openai.ChatCompletion.create') as mock_create:
+            mock_create.return_value = {
+                'choices': [{'message': {'content': 'Test response'}}]
+            }
+            response = self.cm.generate_response("Test input")
+            self.assertIn('Test response', response)
+
+
 
 if __name__ == "__main__":
     pytest.main()
