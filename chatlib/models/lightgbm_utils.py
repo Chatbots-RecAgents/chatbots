@@ -3,9 +3,9 @@
 
 import logging
 import numpy as np
-import category_encoders as ce
 from tqdm import tqdm
 import collections
+import category_encoders as ce
 import gc
 
 

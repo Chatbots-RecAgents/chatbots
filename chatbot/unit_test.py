@@ -1,10 +1,12 @@
 import unittest
 import pandas as pd
+import numpy as np  # Ensure numpy is imported
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.models import Sequential
 import os
 import json
 from chatlib.datasets.python_splitters import python_random_split
+from chatlib.models.lightgbm_utils import NumEncoder
 
 # Mock the openai import to avoid errors during testing environments where it is not available
 class openai:
@@ -78,3 +80,52 @@ class TestSurpriseModel(unittest.TestCase):
 
     def test_data_split(self):
         self.assertAlmostEqual(len(self.train) / len(self.data), 0.75, delta=0.1)
+
+
+class TestNumEncoder(unittest.TestCase):
+
+    def setUp(self):
+        cate_cols = ['category']
+        nume_cols = ['value']
+        label_col = 'label'
+        self.encoder = NumEncoder(cate_cols, nume_cols, label_col)
+
+        # Sample data for testing
+        self.df_train = pd.DataFrame({
+            'category': ['A', 'B', 'A', 'C'],
+            'value': [1, 2, 3, 4],
+            'label': [0, 1, 0, 1]
+        })
+
+        self.df_test = pd.DataFrame({
+            'category': ['A', 'B', 'C', 'D'],
+            'value': [2, 1, 4, 3],
+            'label': [1, 0, 1, 0]
+        })
+
+    def test_initialization(self):
+        """Test the initialization of NumEncoder."""
+        self.assertEqual(self.encoder.label_name, 'label')
+        self.assertIsInstance(self.encoder.dtype_dict, dict)
+        self.assertIn('category', self.encoder.dtype_dict)
+
+    def test_fit_transform(self):
+        """Test the fit_transform method."""
+        trn_x, trn_y = self.encoder.fit_transform(self.df_train)
+        self.assertIsInstance(trn_x, np.ndarray)
+        self.assertIsInstance(trn_y, np.ndarray)
+        self.assertEqual(trn_x.shape[0], self.df_train.shape[0])  # Check if rows match
+        self.assertEqual(trn_y.shape[0], self.df_train.shape[0])
+
+    def test_transform(self):
+        """Test the transform method after fitting."""
+        # Assuming fit_transform has been called
+        self.encoder.fit_transform(self.df_train)
+        vld_x, vld_y = self.encoder.transform(self.df_test)
+        self.assertIsInstance(vld_x, np.ndarray)
+        self.assertIsInstance(vld_y, np.ndarray)
+        self.assertEqual(vld_x.shape[0], self.df_test.shape[0])
+        self.assertEqual(vld_y.shape[0], self.df_test.shape[0])
+
+if __name__ == '__main__':
+    unittest.main()
