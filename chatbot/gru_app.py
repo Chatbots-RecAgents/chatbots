@@ -4,6 +4,24 @@ from lgbm_funcs import *
 import os
 import json
 
+#function to read and fill json from chatbot inputed profile
+def read_and_fill_json(path, expected_keys):
+    '''
+    Inputs: json path & expected keys 
+    Output: complete json ready to be used by lgbm
+
+    This is needed to make on demand recommmendations from the
+    user information given in the chatbot
+    '''
+    with open(path, 'r') as file:
+        json_data = json.load(file)
+
+    for key in expected_keys:
+        if key not in json_data:
+            json_data[key] = ""
+
+    return json_data
+
 def apply_custom_css():
     css = """
     <style>
@@ -59,10 +77,11 @@ def main():
         df_preprocessed = preprocess_df(path)
 
         json_path = 'current_user_data.json'
-        if os.path.exists(json_path):
-            with open(json_path, 'r') as json_file:
-                given_profile = json.load(json_file)
+        expected_keys = ['age', 'body_type', 'diet', 'drinks', 'drugs', 'education', 'ethnicity', 'height', 'income', 'job', 'last_online', 'location', 'offspring', 'orientation', 'pets', 'religion', 'sex', 'sign', 'smokes', 'speaks', 'status']
 
+        if os.path.exists(json_path):
+            # Read and fill the JSON file
+            given_profile = read_and_fill_json(json_path, expected_keys)
             #Computing the ratings
             rated_df = ratings_prediction(given_profile, df_preprocessed)
 
